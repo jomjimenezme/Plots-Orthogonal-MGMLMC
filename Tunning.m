@@ -14,6 +14,8 @@ methods = {'Full', 'Orthogonal', 'Oblique'};
 markers = {'o-', '*-', 'diamond-'}; % Marker styles 
 colors = ['b', 'r', 'g']; 
 
+%lims = {[0 18], [1.2 1.6],  [2 16]};
+lims = {[0 25], [0 2.5],  [0 25]};
 
 figure;
 for i = 1:3
@@ -28,6 +30,7 @@ for i = 1:3
     end
     
     hold off;
+    ylim(1E6.*lims{i});
     title(sprintf('%s Operator', methods{i}));
     xlabel('N_{tv}');
     ylabel('Variance');
@@ -42,7 +45,7 @@ set(bigTitle, 'FontSize', 14, 'FontWeight', 'bold'); % Adjust title properties a
 
 
 
-
+lims = {[0.1 0.25],[1 2.5],[1 2.5]}% [0 18],  [0 18]};
 figure;
 for i = 1:3
     
@@ -59,6 +62,7 @@ for i = 1:3
     title(sprintf('%s Operator', methods{i}));
     xlabel('N_{tv}');
     ylabel('Variance');
+    ylim(1E6.*lims{i})
     legend;
     grid on;
 end
