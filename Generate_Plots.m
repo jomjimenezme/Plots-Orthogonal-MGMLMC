@@ -1,4 +1,8 @@
 clc; clear all; close all;
+width = 10;
+height = 10;
+size_font = 30;
+
 [l, E250, E250_Def, J501, J501_Def, CoarE250, CoarJ501] = gather_data();
 %--------------------------------------------------------------------------
 % colors for lines
@@ -10,6 +14,8 @@ markers = {'o-', '^-', 's-'}; % Marker styles
 
 % Plotting E250 
 figure;
+set(gcf, 'Units', 'inches', 'Position', [0, 0, width, height])
+
 hold on;
 
 for i = 1:length(E250)
@@ -21,15 +27,20 @@ yline(E250_Def(3), '--','LineWidth',2.0);
 yline(CoarE250, '--','color', [0.3010 0.7450 0.9330], 'LineWidth',2.0);
 
 
-hold off;
+
+title('E250 configuration');
+
 xlabel('l');
 ylabel('Estimated variance');
-title('E250 configuration');
-legend('M_l', 'F_l', 'O_l', 'Inexact deflation', 'A^{-1}_L');
+lgd=legend('M_l', 'F_l', 'O_l', 'Inexact deflation', 'A^{-1}_L');
+lgd.Location = 'east';
 
 % to show only 1, 2, 3, 4
 xlim([1, 3]);
 xticks([1, 2, 3]);
+set(gca, 'FontSize', size_font);
+hold off;
+saveas(gcf, 'E250.png')
 
 
 
@@ -41,6 +52,8 @@ markers_J501 = markers;
 
 % Plotting J501 
 figure;
+set(gcf, 'Units', 'inches', 'Position', [0, 0, width, height])
+
 hold on;
 
 for i = 1:length(J501)
@@ -51,13 +64,20 @@ end
 yline(J501_Def(3), '--', 'LineWidth',2.0);
 yline(CoarJ501, '--', 'color', [0.3010 0.7450 0.9330], 'LineWidth',2.0);
 
-hold off;
+
 xlabel('l');
 ylabel('Estimated variance');
 title('J501 configuration');
-legend('M_l', 'F_l', 'O_l', 'Inexact deflation', 'A^{-1}_L');
+lgd = legend('M_l', 'F_l', 'O_l', 'Inexact deflation', 'A^{-1}_L');
+lgd.Location = 'east';
 
 % to show only 1, 2, 3, 4 on x-axis
 xlim([1, 3]);
 xticks([1, 2, 3]);
+set(gca, 'FontSize', size_font);
+hold off;
+saveas(gcf, 'J501.png')
 
+
+pause(3);
+close all;
