@@ -18,8 +18,8 @@ methods = {'Full-Rank', 'Orthogonal', 'Oblique'};
 markers = {'o-', '*-', 'diamond-'}; % Marker styles 
 colors = ['b', 'r', 'g']; 
 
-%lims = {[0 18], [1.2 1.6],  [2 16]};
-lims = {[0 25], [0 2.5],  [0 25]};
+max_val = max([tunning_non_deflated(:); tunning_deflated(:)]);
+min_val = min([tunning_non_deflated(:); tunning_deflated(:)]);
 
 figure;
 set(gcf, 'Units', 'inches', 'Position', [0, 0, width, height])
@@ -34,19 +34,20 @@ for i = 1:3
         'MarkerSize', 8, 'Color', colors(j),'LineWidth', size_line);
     end
     
-    hold off;
-    ylim(1E6.*lims{i});
-    title(sprintf('%s Operator', methods{i}));
+    
+    set(gca, 'YScale', 'log');  
+    ylim([min_val, max_val]);    title(sprintf('%s Operator', methods{i}));
     xlabel('N_{tv}');
     ylabel('Estimated Variance');
     lgd = legend;
     grid on;
     set(gca, 'FontSize', size_font);
+    hold off;
 end
 
 % Adding a main title to the entire figure
-bigTitle = sgtitle('Variance for Different Operators at Finest level');
-set(bigTitle, 'FontSize', size_font, 'FontWeight', 'bold'); % Adjust title properties as needed
+%bigTitle = sgtitle('Variance for Different Operators at Finest level');
+%set(bigTitle, 'FontSize', size_font, 'FontWeight', 'bold'); % Adjust title properties as needed
 saveas(gcf, 'non-deflated.png')
 
 
@@ -79,10 +80,11 @@ for i = 1:3
 end
 
 % Adding a main title to the entire figure
-bigTitle = sgtitle('Variance for DEFLATED Different Operators at Finest level');
-set(bigTitle, 'FontSize', size_font, 'FontWeight', 'bold'); % Adjust title properties as needed
+%bigTitle = sgtitle('Variance for DEFLATED Different Operators at Finest level');
+%set(bigTitle, 'FontSize', size_font, 'FontWeight', 'bold'); % Adjust title properties as needed
 saveas(gcf, 'Deflated.png')
 
 
+%%
 pause(3)
 close all;
