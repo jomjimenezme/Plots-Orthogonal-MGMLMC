@@ -85,6 +85,6 @@ end
 saveas(gcf, 'Deflated.png')
 
 
-%%
+
 pause(3)
 close all;
