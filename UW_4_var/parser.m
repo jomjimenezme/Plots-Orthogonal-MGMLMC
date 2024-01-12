@@ -1,7 +1,8 @@
 clc; clear;
-filetext = fileread('mpi_192-out.24448588');
-original_var =29789694;
-original_trace = 155264207.663641+i*221.514461;
+%filetext = fileread('mpi_192-out.24448588');
+filetext = fileread('test.out');
+original_var =226367;
+original_trace = -137031.919373+23.473224;
 expr = 'trace: \d*.\d*';
 expr_ima = '[-+]?\d+\.\d+,';
 matches = regexp(filetext,expr,'match');
@@ -12,7 +13,7 @@ matches_ima = strrep(matches_ima, '+', '');
 siz = size(matches);
 for j =1:siz(2)
     traces(j) = str2double(erase(matches{j},'trace: ')) ...
-                +i*str2double(matches_ima{j});
+                +1i*str2double(matches_ima{j});
 end
 
 %-----------Taking the first 500 values
@@ -28,14 +29,24 @@ end
 
 %---------Compute Trace and Variance
 tr = mean(individual_samples);
-for j=1:sample_size
-    var_MATLAB = conj(individual_samples(j) - tr) * (individual_samples(j) - tr);
-end
-var_MATLAB=var_MATLAB/(sample_size-1);
+
+var_MATLAB = sum( abs(individual_samples - tr).^2)/(sample_size);
+fourth_moment = sum(abs( individual_samples - tr ).^4)/(sample_size);
 
 
 
-[v,dv,ddv]=get_variance(individual_samples);
+%fourth_moment = ((sample_size-1)/sample_size) *2*var(individual_samples)*var(individual_samples)/sample_size
+fourth_moment_f = 2* var(individual_samples)*var(individual_samples)/(sample_size-1);
+
+st= sqrt(fourth_moment)
+st_f= sqrt(fourth_moment_f)
+format long
+int = [var_MATLAB - st/sqrt(sample_size), var_MATLAB + st/sqrt(sample_size)];
+
+
+
+
+%[v,dv,ddv]=get_variance(individual_samples);
 
 disp('relative_error for Trace')
 disp((original_trace-tr)/original_trace)

@@ -1,33 +1,36 @@
 
 
 - Combinaciones for ORTHOGONAL ONLY---> E250, J501: 
-Finnest only? -> YES.
-Parameters, at all levels? --> yas
-J501
----------------------------------------
-E250
-Gather
---------------------------------------
-Code python matlab to automate error bars.
+    Finnest only? -> YES.  (I am running all levels)
+    Parameters, at all levels? --> yas
+        J501-->FULL_RANK
+        ---------------------------------------
+        E250--->Queued  + FULL_RANK
+        --------------------------------------
+        - If(necessary)
+            - Mirar E250 al 3er level -> deflation with 16 deflation Vectors
+            - Deflation coarsest level E250 and J501. 64 deflation vectors.
+          endif
+----------------------------------------------------------------------------
 
-Gather all data, including, but not limited to:
-- Gather Deflated Plain study.
-- Gather data from single solves
-- Gather data from small-physical
+- Code python/matlab for automating gathering of error bars :
+    - Code implemented, expects a file and checks the 500 first trace values.
+    - Implement Jacknife? It's easy
+----------------------------------------------------------------------------
+- Gather all data locally, mostly FOR ERROR BARS, including, but not limited to:
+    - Deflated Plain study.
+    - single solves
+    - small-physical and small m0-shift
+----------------------------------------------------------------------------
 
-If(necessary)
-    - Mirar E250 al 3er level -> deflation with 16 deflation Vectors
-    - Deflation coarsest level E250 and J501. 64 deflation vectors.
-endif
-
-
-- #levels 
+- Runs for #levels 
   - 2 3 lvls split ONLY
   - 2 3 lvls split ONLY + deflated coarsest w 64 test vectors
+----------------------------------------------------------------------------
 
-- Inexactly deflated Hutchinson: BPI tunning:  (J501 and E250) (Jump around to avoid all combinaitons)
+- Runs for Inexactly deflated Hutchinson: BPI tunning:  (J501 and E250) (Jump around to avoid all combinaitons)
     - rel-residual solves : 1E-1...1E-6 (Stop when not benneficial anymore)
     - # BPI iters: 1...5 (Stop when not benneficial anymore)
-
+----------------------------------------------------------------------------
     
-- Run with Z4
+- Run with Z4 (focus: MGMLMC++)
