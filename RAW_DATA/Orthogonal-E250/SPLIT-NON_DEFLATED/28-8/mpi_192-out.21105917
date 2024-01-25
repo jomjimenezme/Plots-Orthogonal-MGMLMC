@@ -1,0 +1,3077 @@
+Wed Oct 18 10:20:58 CEST 2023
+rm -f build/*.o
+rm -f build/gsrc/*
+sed -f double.sed src/operator_generic.c > build/gsrc/operator_double.c
+cp src/dirac.h build/gsrc/dirac.h
+cp src/sse_float_intrinsic.h build/gsrc/sse_float_intrinsic.h
+cp src/sse_double_intrinsic.h build/gsrc/sse_double_intrinsic.h
+cp src/blas_vectorized.h build/gsrc/blas_vectorized.h
+cp src/DDalphaAMG.h build/gsrc/DDalphaAMG.h
+cp src/io.h build/gsrc/io.h
+cp src/sse_complex_float_intrinsic.h build/gsrc/sse_complex_float_intrinsic.h
+cp src/top_level.h build/gsrc/top_level.h
+cp src/sse_complex_double_intrinsic.h build/gsrc/sse_complex_double_intrinsic.h
+cp src/sse_blas_vectorized.h build/gsrc/sse_blas_vectorized.h
+cp src/main.h build/gsrc/main.h
+cp src/sse_linalg.h build/gsrc/sse_linalg.h
+cp src/init.h build/gsrc/init.h
+cp src/solver_analysis.h build/gsrc/solver_analysis.h
+cp src/var_table.h build/gsrc/var_table.h
+cp src/data_layout.h build/gsrc/data_layout.h
+cp src/sse_coarse_operator.h build/gsrc/sse_coarse_operator.h
+cp src/vectorization_control.h build/gsrc/vectorization_control.h
+cp src/linalg.h build/gsrc/linalg.h
+cp src/sse_dirac_su3local.h build/gsrc/sse_dirac_su3local.h
+cp src/linsolve.h build/gsrc/linsolve.h
+cp src/ghost.h build/gsrc/ghost.h
+cp src/sse_dirac.h build/gsrc/sse_dirac.h
+cp src/threading.h build/gsrc/threading.h
+cp src/lime_io.h build/gsrc/lime_io.h
+cp src/preconditioner.h build/gsrc/preconditioner.h
+cp src/clifford.h build/gsrc/clifford.h
+sed -f float.sed src/sse_interpolation_generic.h > build/gsrc/sse_interpolation_float.h
+sed -f float.sed src/main_post_def_generic.h > build/gsrc/main_post_def_float.h
+sed -f float.sed src/block_jacobi_generic.h > build/gsrc/block_jacobi_float.h
+sed -f float.sed src/coarse_operator_generic.h > build/gsrc/coarse_operator_float.h
+sed -f float.sed src/coarse_oddeven_generic.h > build/gsrc/coarse_oddeven_float.h
+sed -f float.sed src/vcycle_generic.h > build/gsrc/vcycle_float.h
+sed -f float.sed src/gathering_generic.h > build/gsrc/gathering_float.h
+sed -f float.sed src/main_pre_def_generic.h > build/gsrc/main_pre_def_float.h
+sed -f float.sed src/vectorization_dirac_generic.h > build/gsrc/vectorization_dirac_float.h
+sed -f float.sed src/oddeven_generic.h > build/gsrc/oddeven_float.h
+sed -f float.sed src/powerit_generic.h > build/gsrc/powerit_float.h
+sed -f float.sed src/hutchinson_generic.h > build/gsrc/hutchinson_float.h
+sed -f float.sed src/dirac_generic.h > build/gsrc/dirac_float.h
+sed -f float.sed src/linalg_generic.h > build/gsrc/linalg_float.h
+sed -f float.sed src/sse_linalg_generic.h > build/gsrc/sse_linalg_float.h
+sed -f float.sed src/coarsening_generic.h > build/gsrc/coarsening_float.h
+sed -f float.sed src/interpolation_generic.h > build/gsrc/interpolation_float.h
+sed -f float.sed src/gcrodr_generic.h > build/gsrc/gcrodr_float.h
+sed -f float.sed src/lapackwrap_generic.h > build/gsrc/lapackwrap_float.h
+sed -f float.sed src/data_generic.h > build/gsrc/data_float.h
+sed -f float.sed src/local_polyprec_generic.h > build/gsrc/local_polyprec_float.h
+sed -f float.sed src/sse_coarse_operator_generic.h > build/gsrc/sse_coarse_operator_float.h
+sed -f float.sed src/schwarz_generic.h > build/gsrc/schwarz_float.h
+sed -f float.sed src/init_generic.h > build/gsrc/init_float.h
+sed -f float.sed src/linsolve_generic.h > build/gsrc/linsolve_float.h
+sed -f float.sed src/operator_generic.h > build/gsrc/operator_float.h
+sed -f float.sed src/ghost_generic.h > build/gsrc/ghost_float.h
+sed -f float.sed src/setup_generic.h > build/gsrc/setup_float.h
+sed -f float.sed src/polyprec_generic.h > build/gsrc/polyprec_float.h
+sed -f double.sed src/sse_interpolation_generic.h > build/gsrc/sse_interpolation_double.h
+sed -f double.sed src/main_post_def_generic.h > build/gsrc/main_post_def_double.h
+sed -f double.sed src/block_jacobi_generic.h > build/gsrc/block_jacobi_double.h
+sed -f double.sed src/coarse_operator_generic.h > build/gsrc/coarse_operator_double.h
+sed -f double.sed src/coarse_oddeven_generic.h > build/gsrc/coarse_oddeven_double.h
+sed -f double.sed src/vcycle_generic.h > build/gsrc/vcycle_double.h
+sed -f double.sed src/gathering_generic.h > build/gsrc/gathering_double.h
+sed -f double.sed src/main_pre_def_generic.h > build/gsrc/main_pre_def_double.h
+sed -f double.sed src/vectorization_dirac_generic.h > build/gsrc/vectorization_dirac_double.h
+sed -f double.sed src/oddeven_generic.h > build/gsrc/oddeven_double.h
+sed -f double.sed src/powerit_generic.h > build/gsrc/powerit_double.h
+sed -f double.sed src/hutchinson_generic.h > build/gsrc/hutchinson_double.h
+sed -f double.sed src/dirac_generic.h > build/gsrc/dirac_double.h
+sed -f double.sed src/linalg_generic.h > build/gsrc/linalg_double.h
+sed -f double.sed src/sse_linalg_generic.h > build/gsrc/sse_linalg_double.h
+sed -f double.sed src/coarsening_generic.h > build/gsrc/coarsening_double.h
+sed -f double.sed src/interpolation_generic.h > build/gsrc/interpolation_double.h
+sed -f double.sed src/gcrodr_generic.h > build/gsrc/gcrodr_double.h
+sed -f double.sed src/lapackwrap_generic.h > build/gsrc/lapackwrap_double.h
+sed -f double.sed src/data_generic.h > build/gsrc/data_double.h
+sed -f double.sed src/local_polyprec_generic.h > build/gsrc/local_polyprec_double.h
+sed -f double.sed src/sse_coarse_operator_generic.h > build/gsrc/sse_coarse_operator_double.h
+sed -f double.sed src/schwarz_generic.h > build/gsrc/schwarz_double.h
+sed -f double.sed src/init_generic.h > build/gsrc/init_double.h
+sed -f double.sed src/linsolve_generic.h > build/gsrc/linsolve_double.h
+sed -f double.sed src/operator_generic.h > build/gsrc/operator_double.h
+sed -f double.sed src/ghost_generic.h > build/gsrc/ghost_double.h
+sed -f double.sed src/setup_generic.h > build/gsrc/setup_double.h
+sed -f double.sed src/polyprec_generic.h > build/gsrc/polyprec_double.h
+sed -f double.sed src/local_polyprec_generic.c > build/gsrc/local_polyprec_double.c
+sed -f double.sed src/data_generic.c > build/gsrc/data_double.c
+sed -f double.sed src/lapackwrap_generic.c > build/gsrc/lapackwrap_double.c
+sed -f double.sed src/gcrodr_generic.c > build/gsrc/gcrodr_double.c
+sed -f double.sed src/sse_interpolation_generic.c > build/gsrc/sse_interpolation_double.c
+sed -f double.sed src/interpolation_generic.c > build/gsrc/interpolation_double.c
+sed -f double.sed src/coarsening_generic.c > build/gsrc/coarsening_double.c
+sed -f double.sed src/sse_linalg_generic.c > build/gsrc/sse_linalg_double.c
+sed -f double.sed src/linalg_generic.c > build/gsrc/linalg_double.c
+sed -f double.sed src/vectorization_dirac_generic.c > build/gsrc/vectorization_dirac_double.c
+sed -f double.sed src/hutchinson_generic.c > build/gsrc/hutchinson_double.c
+sed -f double.sed src/init_generic.c > build/gsrc/init_double.c
+sed -f double.sed src/oddeven_generic.c > build/gsrc/oddeven_double.c
+sed -f double.sed src/vcycle_generic.c > build/gsrc/vcycle_double.c
+sed -f double.sed src/coarse_oddeven_generic.c > build/gsrc/coarse_oddeven_double.c
+sed -f double.sed src/coarse_operator_generic.c > build/gsrc/coarse_operator_double.c
+sed -f double.sed src/setup_generic.c > build/gsrc/setup_double.c
+sed -f double.sed src/schwarz_generic.c > build/gsrc/schwarz_double.c
+sed -f double.sed src/block_jacobi_generic.c > build/gsrc/block_jacobi_double.c
+sed -f double.sed src/dirac_generic.c > build/gsrc/dirac_double.c
+sed -f double.sed src/sse_coarse_operator_generic.c > build/gsrc/sse_coarse_operator_double.c
+sed -f double.sed src/powerit_generic.c > build/gsrc/powerit_double.c
+sed -f double.sed src/polyprec_generic.c > build/gsrc/polyprec_double.c
+sed -f double.sed src/ghost_generic.c > build/gsrc/ghost_double.c
+sed -f double.sed src/gathering_generic.c > build/gsrc/gathering_double.c
+sed -f double.sed src/linsolve_generic.c > build/gsrc/linsolve_double.c
+sed -f float.sed src/operator_generic.c > build/gsrc/operator_float.c
+sed -f float.sed src/local_polyprec_generic.c > build/gsrc/local_polyprec_float.c
+sed -f float.sed src/data_generic.c > build/gsrc/data_float.c
+sed -f float.sed src/lapackwrap_generic.c > build/gsrc/lapackwrap_float.c
+sed -f float.sed src/gcrodr_generic.c > build/gsrc/gcrodr_float.c
+sed -f float.sed src/sse_interpolation_generic.c > build/gsrc/sse_interpolation_float.c
+sed -f float.sed src/interpolation_generic.c > build/gsrc/interpolation_float.c
+sed -f float.sed src/coarsening_generic.c > build/gsrc/coarsening_float.c
+sed -f float.sed src/sse_linalg_generic.c > build/gsrc/sse_linalg_float.c
+sed -f float.sed src/linalg_generic.c > build/gsrc/linalg_float.c
+sed -f float.sed src/vectorization_dirac_generic.c > build/gsrc/vectorization_dirac_float.c
+sed -f float.sed src/hutchinson_generic.c > build/gsrc/hutchinson_float.c
+sed -f float.sed src/init_generic.c > build/gsrc/init_float.c
+sed -f float.sed src/oddeven_generic.c > build/gsrc/oddeven_float.c
+sed -f float.sed src/vcycle_generic.c > build/gsrc/vcycle_float.c
+sed -f float.sed src/coarse_oddeven_generic.c > build/gsrc/coarse_oddeven_float.c
+sed -f float.sed src/coarse_operator_generic.c > build/gsrc/coarse_operator_float.c
+sed -f float.sed src/setup_generic.c > build/gsrc/setup_float.c
+sed -f float.sed src/schwarz_generic.c > build/gsrc/schwarz_float.c
+sed -f float.sed src/block_jacobi_generic.c > build/gsrc/block_jacobi_float.c
+sed -f float.sed src/dirac_generic.c > build/gsrc/dirac_float.c
+sed -f float.sed src/sse_coarse_operator_generic.c > build/gsrc/sse_coarse_operator_float.c
+sed -f float.sed src/powerit_generic.c > build/gsrc/powerit_float.c
+sed -f float.sed src/polyprec_generic.c > build/gsrc/polyprec_float.c
+sed -f float.sed src/ghost_generic.c > build/gsrc/ghost_float.c
+sed -f float.sed src/gathering_generic.c > build/gsrc/gathering_float.c
+sed -f float.sed src/linsolve_generic.c > build/gsrc/linsolve_float.c
+cp src/linsolve.c build/gsrc/linsolve.c
+cp src/data_layout.c build/gsrc/data_layout.c
+cp src/var_table.c build/gsrc/var_table.c
+cp src/sse_linalg.c build/gsrc/sse_linalg.c
+cp src/main.c build/gsrc/main.c
+cp src/linalg.c build/gsrc/linalg.c
+cp src/threading.c build/gsrc/threading.c
+cp src/preconditioner.c build/gsrc/preconditioner.c
+cp src/DDalphaAMG_interface.c build/gsrc/DDalphaAMG_interface.c
+cp src/top_level.c build/gsrc/top_level.c
+cp src/sse_dirac.c build/gsrc/sse_dirac.c
+cp src/io.c build/gsrc/io.c
+cp src/solver_analysis.c build/gsrc/solver_analysis.c
+cp src/init.c build/gsrc/init.c
+cp src/dirac.c build/gsrc/dirac.c
+cp src/lime_io.c build/gsrc/lime_io.c
+cp src/ghost.c build/gsrc/ghost.c
+cpp -MM build/gsrc/operator_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/operator_double.dep : ,g' > build/gsrc/operator_double.dep
+cpp -MM build/gsrc/local_polyprec_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/local_polyprec_double.dep : ,g' > build/gsrc/local_polyprec_double.dep
+cpp -MM build/gsrc/data_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/data_double.dep : ,g' > build/gsrc/data_double.dep
+cpp -MM build/gsrc/lapackwrap_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/lapackwrap_double.dep : ,g' > build/gsrc/lapackwrap_double.dep
+cpp -MM build/gsrc/gcrodr_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/gcrodr_double.dep : ,g' > build/gsrc/gcrodr_double.dep
+cpp -MM build/gsrc/sse_interpolation_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/sse_interpolation_double.dep : ,g' > build/gsrc/sse_interpolation_double.dep
+cpp -MM build/gsrc/interpolation_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/interpolation_double.dep : ,g' > build/gsrc/interpolation_double.dep
+cpp -MM build/gsrc/linalg_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/linalg_double.dep : ,g' > build/gsrc/linalg_double.dep
+cpp -MM build/gsrc/vectorization_dirac_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/vectorization_dirac_double.dep : ,g' > build/gsrc/vectorization_dirac_double.dep
+cpp -MM build/gsrc/oddeven_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/oddeven_double.dep : ,g' > build/gsrc/oddeven_double.dep
+cpp -MM build/gsrc/vcycle_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/vcycle_double.dep : ,g' > build/gsrc/vcycle_double.dep
+cpp -MM build/gsrc/coarse_operator_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/coarse_operator_double.dep : ,g' > build/gsrc/coarse_operator_double.dep
+cpp -MM build/gsrc/setup_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/setup_double.dep : ,g' > build/gsrc/setup_double.dep
+cpp -MM build/gsrc/block_jacobi_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/block_jacobi_double.dep : ,g' > build/gsrc/block_jacobi_double.dep
+cpp -MM build/gsrc/sse_coarse_operator_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/sse_coarse_operator_double.dep : ,g' > build/gsrc/sse_coarse_operator_double.dep
+cpp -MM build/gsrc/powerit_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/powerit_double.dep : ,g' > build/gsrc/powerit_double.dep
+cpp -MM build/gsrc/polyprec_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/polyprec_double.dep : ,g' > build/gsrc/polyprec_double.dep
+cpp -MM build/gsrc/ghost_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/ghost_double.dep : ,g' > build/gsrc/ghost_double.dep
+cpp -MM build/gsrc/gathering_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/gathering_double.dep : ,g' > build/gsrc/gathering_double.dep
+cpp -MM build/gsrc/linsolve.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/linsolve.dep : ,g' > build/gsrc/linsolve.dep
+cpp -MM build/gsrc/coarsening_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/coarsening_double.dep : ,g' > build/gsrc/coarsening_double.dep
+cpp -MM build/gsrc/sse_linalg_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/sse_linalg_double.dep : ,g' > build/gsrc/sse_linalg_double.dep
+cpp -MM build/gsrc/hutchinson_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/hutchinson_double.dep : ,g' > build/gsrc/hutchinson_double.dep
+cpp -MM build/gsrc/coarse_oddeven_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/coarse_oddeven_double.dep : ,g' > build/gsrc/coarse_oddeven_double.dep
+cpp -MM build/gsrc/schwarz_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/schwarz_double.dep : ,g' > build/gsrc/schwarz_double.dep
+cpp -MM build/gsrc/dirac_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/dirac_double.dep : ,g' > build/gsrc/dirac_double.dep
+cpp -MM build/gsrc/operator_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/operator_float.dep : ,g' > build/gsrc/operator_float.dep
+cpp -MM build/gsrc/gcrodr_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/gcrodr_float.dep : ,g' > build/gsrc/gcrodr_float.dep
+cpp -MM build/gsrc/sse_interpolation_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/sse_interpolation_float.dep : ,g' > build/gsrc/sse_interpolation_float.dep
+cpp -MM build/gsrc/interpolation_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/interpolation_float.dep : ,g' > build/gsrc/interpolation_float.dep
+cpp -MM build/gsrc/sse_linalg_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/sse_linalg_float.dep : ,g' > build/gsrc/sse_linalg_float.dep
+cpp -MM build/gsrc/hutchinson_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/hutchinson_float.dep : ,g' > build/gsrc/hutchinson_float.dep
+cpp -MM build/gsrc/data_layout.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/data_layout.dep : ,g' > build/gsrc/data_layout.dep
+cpp -MM build/gsrc/var_table.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/var_table.dep : ,g' > build/gsrc/var_table.dep
+cpp -MM build/gsrc/sse_linalg.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/sse_linalg.dep : ,g' > build/gsrc/sse_linalg.dep
+cpp -MM build/gsrc/main.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/main.dep : ,g' > build/gsrc/main.dep
+cpp -MM build/gsrc/preconditioner.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/preconditioner.dep : ,g' > build/gsrc/preconditioner.dep
+cpp -MM build/gsrc/init_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/init_double.dep : ,g' > build/gsrc/init_double.dep
+cpp -MM build/gsrc/linsolve_double.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/linsolve_double.dep : ,g' > build/gsrc/linsolve_double.dep
+cpp -MM build/gsrc/data_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/data_float.dep : ,g' > build/gsrc/data_float.dep
+cpp -MM build/gsrc/lapackwrap_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/lapackwrap_float.dep : ,g' > build/gsrc/lapackwrap_float.dep
+cpp -MM build/gsrc/linalg_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/linalg_float.dep : ,g' > build/gsrc/linalg_float.dep
+cpp -MM build/gsrc/init_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/init_float.dep : ,g' > build/gsrc/init_float.dep
+cpp -MM build/gsrc/oddeven_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/oddeven_float.dep : ,g' > build/gsrc/oddeven_float.dep
+cpp -MM build/gsrc/vcycle_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/vcycle_float.dep : ,g' > build/gsrc/vcycle_float.dep
+cpp -MM build/gsrc/coarse_oddeven_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/coarse_oddeven_float.dep : ,g' > build/gsrc/coarse_oddeven_float.dep
+cpp -MM build/gsrc/dirac_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/dirac_float.dep : ,g' > build/gsrc/dirac_float.dep
+cpp -MM build/gsrc/polyprec_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/polyprec_float.dep : ,g' > build/gsrc/polyprec_float.dep
+cpp -MM build/gsrc/linalg.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/linalg.dep : ,g' > build/gsrc/linalg.dep
+cpp -MM build/gsrc/threading.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/threading.dep : ,g' > build/gsrc/threading.dep
+cpp -MM build/gsrc/DDalphaAMG_interface.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/DDalphaAMG_interface.dep : ,g' > build/gsrc/DDalphaAMG_interface.dep
+cpp -MM build/gsrc/sse_dirac.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/sse_dirac.dep : ,g' > build/gsrc/sse_dirac.dep
+cpp -MM build/gsrc/io.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/io.dep : ,g' > build/gsrc/io.dep
+cpp -MM build/gsrc/solver_analysis.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/solver_analysis.dep : ,g' > build/gsrc/solver_analysis.dep
+cpp -MM build/gsrc/lime_io.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/lime_io.dep : ,g' > build/gsrc/lime_io.dep
+cpp -MM build/gsrc/local_polyprec_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/local_polyprec_float.dep : ,g' > build/gsrc/local_polyprec_float.dep
+cpp -MM build/gsrc/coarsening_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/coarsening_float.dep : ,g' > build/gsrc/coarsening_float.dep
+cpp -MM build/gsrc/coarse_operator_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/coarse_operator_float.dep : ,g' > build/gsrc/coarse_operator_float.dep
+cpp -MM build/gsrc/setup_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/setup_float.dep : ,g' > build/gsrc/setup_float.dep
+cpp -MM build/gsrc/schwarz_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/schwarz_float.dep : ,g' > build/gsrc/schwarz_float.dep
+cpp -MM build/gsrc/block_jacobi_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/block_jacobi_float.dep : ,g' > build/gsrc/block_jacobi_float.dep
+cpp -MM build/gsrc/powerit_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/powerit_float.dep : ,g' > build/gsrc/powerit_float.dep
+cpp -MM build/gsrc/ghost_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/ghost_float.dep : ,g' > build/gsrc/ghost_float.dep
+cpp -MM build/gsrc/gathering_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/gathering_float.dep : ,g' > build/gsrc/gathering_float.dep
+cpp -MM build/gsrc/interpolation_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/interpolation_double.dep : ,g' >> build/gsrc/interpolation_double.dep
+cpp -MM build/gsrc/data_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/data_double.dep : ,g' >> build/gsrc/data_double.dep
+cpp -MM build/gsrc/lapackwrap_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/lapackwrap_double.dep : ,g' >> build/gsrc/lapackwrap_double.dep
+cpp -MM build/gsrc/oddeven_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/oddeven_double.dep : ,g' >> build/gsrc/oddeven_double.dep
+cpp -MM build/gsrc/sse_interpolation_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/sse_interpolation_double.dep : ,g' >> build/gsrc/sse_interpolation_double.dep
+cpp -MM build/gsrc/sse_linalg.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/sse_linalg.dep : ,g' >> build/gsrc/sse_linalg.dep
+cpp -MM build/gsrc/gcrodr_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/gcrodr_double.dep : ,g' >> build/gsrc/gcrodr_double.dep
+cpp -MM build/gsrc/coarse_operator_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/coarse_operator_double.dep : ,g' >> build/gsrc/coarse_operator_double.dep
+cpp -MM build/gsrc/local_polyprec_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/local_polyprec_double.dep : ,g' >> build/gsrc/local_polyprec_double.dep
+cpp -MM build/gsrc/hutchinson_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/hutchinson_double.dep : ,g' >> build/gsrc/hutchinson_double.dep
+cpp -MM build/gsrc/dirac_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/dirac_double.dep : ,g' >> build/gsrc/dirac_double.dep
+cpp -MM build/gsrc/io.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/io.dep : ,g' >> build/gsrc/io.dep
+cpp -MM build/gsrc/hutchinson_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/hutchinson_float.dep : ,g' >> build/gsrc/hutchinson_float.dep
+cpp -MM build/gsrc/init_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/init_double.dep : ,g' >> build/gsrc/init_double.dep
+cpp -MM build/gsrc/powerit_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/powerit_double.dep : ,g' >> build/gsrc/powerit_double.dep
+cpp -MM build/gsrc/linsolve_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/linsolve_double.dep : ,g' >> build/gsrc/linsolve_double.dep
+cpp -MM build/gsrc/operator_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/operator_float.dep : ,g' >> build/gsrc/operator_float.dep
+cpp -MM build/gsrc/gcrodr_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/gcrodr_float.dep : ,g' >> build/gsrc/gcrodr_float.dep
+cpp -MM build/gsrc/interpolation_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/interpolation_float.dep : ,g' >> build/gsrc/interpolation_float.dep
+cpp -MM build/gsrc/sse_coarse_operator_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/sse_coarse_operator_double.dep : ,g' >> build/gsrc/sse_coarse_operator_double.dep
+cpp -MM build/gsrc/gathering_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/gathering_double.dep : ,g' >> build/gsrc/gathering_double.dep
+cpp -MM build/gsrc/block_jacobi_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/block_jacobi_double.dep : ,g' >> build/gsrc/block_jacobi_double.dep
+cpp -MM build/gsrc/oddeven_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/oddeven_float.dep : ,g' >> build/gsrc/oddeven_float.dep
+cpp -MM build/gsrc/coarse_oddeven_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/coarse_oddeven_double.dep : ,g' >> build/gsrc/coarse_oddeven_double.dep
+cpp -MM build/gsrc/threading.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/threading.dep : ,g' >> build/gsrc/threading.dep
+cpp -MM build/gsrc/setup_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/setup_float.dep : ,g' >> build/gsrc/setup_float.dep
+cpp -MM build/gsrc/sse_linalg_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/sse_linalg_float.dep : ,g' >> build/gsrc/sse_linalg_float.dep
+cpp -MM build/gsrc/data_layout.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/data_layout.dep : ,g' >> build/gsrc/data_layout.dep
+cpp -MM build/gsrc/setup_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/setup_double.dep : ,g' >> build/gsrc/setup_double.dep
+cpp -MM build/gsrc/linalg_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/linalg_double.dep : ,g' >> build/gsrc/linalg_double.dep
+cpp -MM build/gsrc/operator_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/operator_double.dep : ,g' >> build/gsrc/operator_double.dep
+cpp -MM build/gsrc/vectorization_dirac_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/vectorization_dirac_double.dep : ,g' >> build/gsrc/vectorization_dirac_double.dep
+cpp -MM build/gsrc/vcycle_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/vcycle_double.dep : ,g' >> build/gsrc/vcycle_double.dep
+cpp -MM build/gsrc/polyprec_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/polyprec_double.dep : ,g' >> build/gsrc/polyprec_double.dep
+cpp -MM build/gsrc/ghost_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/ghost_double.dep : ,g' >> build/gsrc/ghost_double.dep
+cpp -MM build/gsrc/linsolve.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/linsolve.dep : ,g' >> build/gsrc/linsolve.dep
+cpp -MM build/gsrc/coarsening_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/coarsening_double.dep : ,g' >> build/gsrc/coarsening_double.dep
+cpp -MM build/gsrc/sse_linalg_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/sse_linalg_double.dep : ,g' >> build/gsrc/sse_linalg_double.dep
+cpp -MM build/gsrc/schwarz_double.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/schwarz_double.dep : ,g' >> build/gsrc/schwarz_double.dep
+cpp -MM build/gsrc/sse_interpolation_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/sse_interpolation_float.dep : ,g' >> build/gsrc/sse_interpolation_float.dep
+cpp -MM build/gsrc/var_table.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/var_table.dep : ,g' >> build/gsrc/var_table.dep
+cpp -MM build/gsrc/main.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/main.dep : ,g' >> build/gsrc/main.dep
+cpp -MM build/gsrc/preconditioner.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/preconditioner.dep : ,g' >> build/gsrc/preconditioner.dep
+cpp -MM build/gsrc/data_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/data_float.dep : ,g' >> build/gsrc/data_float.dep
+cpp -MM build/gsrc/lapackwrap_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/lapackwrap_float.dep : ,g' >> build/gsrc/lapackwrap_float.dep
+cpp -MM build/gsrc/linalg_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/linalg_float.dep : ,g' >> build/gsrc/linalg_float.dep
+cpp -MM build/gsrc/init_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/init_float.dep : ,g' >> build/gsrc/init_float.dep
+cpp -MM build/gsrc/vcycle_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/vcycle_float.dep : ,g' >> build/gsrc/vcycle_float.dep
+cpp -MM build/gsrc/coarse_oddeven_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/coarse_oddeven_float.dep : ,g' >> build/gsrc/coarse_oddeven_float.dep
+cpp -MM build/gsrc/dirac_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/dirac_float.dep : ,g' >> build/gsrc/dirac_float.dep
+cpp -MM build/gsrc/polyprec_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/polyprec_float.dep : ,g' >> build/gsrc/polyprec_float.dep
+cpp -MM build/gsrc/linalg.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/linalg.dep : ,g' >> build/gsrc/linalg.dep
+cpp -MM build/gsrc/DDalphaAMG_interface.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/DDalphaAMG_interface.dep : ,g' >> build/gsrc/DDalphaAMG_interface.dep
+cpp -MM build/gsrc/sse_dirac.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/sse_dirac.dep : ,g' >> build/gsrc/sse_dirac.dep
+cpp -MM build/gsrc/solver_analysis.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/solver_analysis.dep : ,g' >> build/gsrc/solver_analysis.dep
+cpp -MM build/gsrc/lime_io.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/lime_io.dep : ,g' >> build/gsrc/lime_io.dep
+cpp -MM build/gsrc/local_polyprec_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/local_polyprec_float.dep : ,g' >> build/gsrc/local_polyprec_float.dep
+cpp -MM build/gsrc/coarsening_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/coarsening_float.dep : ,g' >> build/gsrc/coarsening_float.dep
+cpp -MM build/gsrc/coarse_operator_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/coarse_operator_float.dep : ,g' >> build/gsrc/coarse_operator_float.dep
+cpp -MM build/gsrc/schwarz_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/schwarz_float.dep : ,g' >> build/gsrc/schwarz_float.dep
+cpp -MM build/gsrc/block_jacobi_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/block_jacobi_float.dep : ,g' >> build/gsrc/block_jacobi_float.dep
+cpp -MM build/gsrc/powerit_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/powerit_float.dep : ,g' >> build/gsrc/powerit_float.dep
+cpp -MM build/gsrc/ghost_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/ghost_float.dep : ,g' >> build/gsrc/ghost_float.dep
+cpp -MM build/gsrc/gathering_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/gathering_float.dep : ,g' >> build/gsrc/gathering_float.dep
+cpp -MM build/gsrc/linsolve_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/linsolve_float.dep : ,g' > build/gsrc/linsolve_float.dep
+cpp -MM build/gsrc/top_level.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/top_level.dep : ,g' > build/gsrc/top_level.dep
+cpp -MM build/gsrc/init.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/init.dep : ,g' > build/gsrc/init.dep
+cpp -MM build/gsrc/dirac.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/dirac.dep : ,g' > build/gsrc/dirac.dep
+cpp -MM build/gsrc/ghost.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/ghost.dep : ,g' > build/gsrc/ghost.dep
+cpp -MM build/gsrc/vectorization_dirac_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/vectorization_dirac_float.dep : ,g' > build/gsrc/vectorization_dirac_float.dep
+cpp -MM build/gsrc/init.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/init.dep : ,g' >> build/gsrc/init.dep
+cpp -MM build/gsrc/top_level.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/top_level.dep : ,g' >> build/gsrc/top_level.dep
+cpp -MM build/gsrc/sse_coarse_operator_float.c | sed 's,\(.*\)\.o[ :]*,build/\1.o build/gsrc/sse_coarse_operator_float.dep : ,g' > build/gsrc/sse_coarse_operator_float.dep
+cpp -MM build/gsrc/linsolve_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/linsolve_float.dep : ,g' >> build/gsrc/linsolve_float.dep
+cpp -MM build/gsrc/ghost.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/ghost.dep : ,g' >> build/gsrc/ghost.dep
+cpp -MM build/gsrc/dirac.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/dirac.dep : ,g' >> build/gsrc/dirac.dep
+cpp -MM build/gsrc/vectorization_dirac_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/vectorization_dirac_float.dep : ,g' >> build/gsrc/vectorization_dirac_float.dep
+cpp -MM build/gsrc/sse_coarse_operator_float.c | sed 's,\(.*\)\.o[ :]*,build/\1_devel.o build/gsrc/sse_coarse_operator_float.dep : ,g' >> build/gsrc/sse_coarse_operator_float.dep
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/ghost.c -o build/ghost.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/lime_io.c -o build/lime_io.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/dirac.c -o build/dirac.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/init.c -o build/init.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/solver_analysis.c -o build/solver_analysis.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/io.c -o build/io.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/sse_dirac.c -o build/sse_dirac.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/top_level.c -o build/top_level.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/DDalphaAMG_interface.c -o build/DDalphaAMG_interface.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/preconditioner.c -o build/preconditioner.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/threading.c -o build/threading.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/linalg.c -o build/linalg.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/main.c -o build/main.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/sse_linalg.c -o build/sse_linalg.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/var_table.c -o build/var_table.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/data_layout.c -o build/data_layout.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/linsolve.c -o build/linsolve.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/linsolve_float.c -o build/linsolve_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/gathering_float.c -o build/gathering_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/ghost_float.c -o build/ghost_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/polyprec_float.c -o build/polyprec_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/powerit_float.c -o build/powerit_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/sse_coarse_operator_float.c -o build/sse_coarse_operator_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/dirac_float.c -o build/dirac_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/block_jacobi_float.c -o build/block_jacobi_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/schwarz_float.c -o build/schwarz_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/setup_float.c -o build/setup_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/coarse_operator_float.c -o build/coarse_operator_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/coarse_oddeven_float.c -o build/coarse_oddeven_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/vcycle_float.c -o build/vcycle_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/oddeven_float.c -o build/oddeven_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/init_float.c -o build/init_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/hutchinson_float.c -o build/hutchinson_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/vectorization_dirac_float.c -o build/vectorization_dirac_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/linalg_float.c -o build/linalg_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/sse_linalg_float.c -o build/sse_linalg_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/coarsening_float.c -o build/coarsening_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/interpolation_float.c -o build/interpolation_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/sse_interpolation_float.c -o build/sse_interpolation_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/gcrodr_float.c -o build/gcrodr_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/lapackwrap_float.c -o build/lapackwrap_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/data_float.c -o build/data_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/local_polyprec_float.c -o build/local_polyprec_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/operator_float.c -o build/operator_float.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/linsolve_double.c -o build/linsolve_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/gathering_double.c -o build/gathering_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/ghost_double.c -o build/ghost_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/polyprec_double.c -o build/polyprec_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/powerit_double.c -o build/powerit_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/sse_coarse_operator_double.c -o build/sse_coarse_operator_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/dirac_double.c -o build/dirac_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/block_jacobi_double.c -o build/block_jacobi_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/schwarz_double.c -o build/schwarz_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/setup_double.c -o build/setup_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/coarse_operator_double.c -o build/coarse_operator_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/coarse_oddeven_double.c -o build/coarse_oddeven_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/vcycle_double.c -o build/vcycle_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/oddeven_double.c -o build/oddeven_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/init_double.c -o build/init_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/hutchinson_double.c -o build/hutchinson_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/vectorization_dirac_double.c -o build/vectorization_dirac_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/linalg_double.c -o build/linalg_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/sse_linalg_double.c -o build/sse_linalg_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/coarsening_double.c -o build/coarsening_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/interpolation_double.c -o build/interpolation_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/sse_interpolation_double.c -o build/sse_interpolation_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/gcrodr_double.c -o build/gcrodr_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/lapackwrap_double.c -o build/lapackwrap_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/data_double.c -o build/data_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/local_polyprec_double.c -o build/local_polyprec_double.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/operator_double.c -o build/operator_double.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/ghost.c -o build/ghost_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/lime_io.c -o build/lime_io_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/dirac.c -o build/dirac_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/init.c -o build/init_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/solver_analysis.c -o build/solver_analysis_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/io.c -o build/io_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/sse_dirac.c -o build/sse_dirac_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/top_level.c -o build/top_level_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/DDalphaAMG_interface.c -o build/DDalphaAMG_interface_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/preconditioner.c -o build/preconditioner_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/threading.c -o build/threading_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/linalg.c -o build/linalg_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/main.c -o build/main_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/sse_linalg.c -o build/sse_linalg_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/var_table.c -o build/var_table_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/data_layout.c -o build/data_layout_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/linsolve.c -o build/linsolve_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/linsolve_float.c -o build/linsolve_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/gathering_float.c -o build/gathering_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/ghost_float.c -o build/ghost_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/polyprec_float.c -o build/polyprec_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/powerit_float.c -o build/powerit_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/sse_coarse_operator_float.c -o build/sse_coarse_operator_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/dirac_float.c -o build/dirac_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/block_jacobi_float.c -o build/block_jacobi_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/schwarz_float.c -o build/schwarz_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/setup_float.c -o build/setup_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/coarse_operator_float.c -o build/coarse_operator_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/coarse_oddeven_float.c -o build/coarse_oddeven_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/vcycle_float.c -o build/vcycle_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/oddeven_float.c -o build/oddeven_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/init_float.c -o build/init_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/hutchinson_float.c -o build/hutchinson_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/vectorization_dirac_float.c -o build/vectorization_dirac_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/linalg_float.c -o build/linalg_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/sse_linalg_float.c -o build/sse_linalg_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/coarsening_float.c -o build/coarsening_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/interpolation_float.c -o build/interpolation_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/sse_interpolation_float.c -o build/sse_interpolation_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/gcrodr_float.c -o build/gcrodr_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/lapackwrap_float.c -o build/lapackwrap_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/data_float.c -o build/data_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/local_polyprec_float.c -o build/local_polyprec_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/operator_float.c -o build/operator_float_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/linsolve_double.c -o build/linsolve_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/gathering_double.c -o build/gathering_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/ghost_double.c -o build/ghost_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/polyprec_double.c -o build/polyprec_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/powerit_double.c -o build/powerit_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/sse_coarse_operator_double.c -o build/sse_coarse_operator_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/dirac_double.c -o build/dirac_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/block_jacobi_double.c -o build/block_jacobi_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/schwarz_double.c -o build/schwarz_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/setup_double.c -o build/setup_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/coarse_operator_double.c -o build/coarse_operator_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/coarse_oddeven_double.c -o build/coarse_oddeven_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/vcycle_double.c -o build/vcycle_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/oddeven_double.c -o build/oddeven_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/init_double.c -o build/init_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/hutchinson_double.c -o build/hutchinson_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/vectorization_dirac_double.c -o build/vectorization_dirac_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/linalg_double.c -o build/linalg_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/sse_linalg_double.c -o build/sse_linalg_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/coarsening_double.c -o build/coarsening_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/interpolation_double.c -o build/interpolation_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/sse_interpolation_double.c -o build/sse_interpolation_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/gcrodr_double.c -o build/gcrodr_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/lapackwrap_double.c -o build/lapackwrap_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/data_double.c -o build/data_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/local_polyprec_double.c -o build/local_polyprec_double_devel.o
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -Idependencies/lapack-3.9.0/LAPACKE/include -c build/gsrc/operator_double.c -o build/operator_double_devel.o
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp    -DPARAMOUTPUT -DTRACK_RES -DPROFILING -DOPENMP  -o bin/DDalphaAMG build/DDalphaAMG_interface.o build/solver_analysis.o build/io.o build/top_level.o build/preconditioner.o build/linalg.o build/main.o build/sse_linalg.o build/data_layout.o build/threading.o build/ghost.o build/lime_io.o build/init.o build/dirac.o build/sse_dirac.o build/var_table.o build/linsolve.o build/dirac_float.o build/block_jacobi_float.o build/schwarz_float.o build/linsolve_float.o build/coarse_operator_float.o build/coarse_oddeven_float.o build/linalg_float.o build/sse_linalg_float.o build/lapackwrap_float.o build/data_float.o build/operator_float.o build/oddeven_float.o build/ghost_float.o build/setup_float.o build/polyprec_float.o build/sse_coarse_operator_float.o build/init_float.o build/powerit_float.o build/gathering_float.o build/hutchinson_float.o build/vcycle_float.o build/vectorization_dirac_float.o build/coarsening_float.o build/interpolation_float.o build/sse_interpolation_float.o build/gcrodr_float.o build/local_polyprec_float.o build/dirac_double.o build/block_jacobi_double.o build/schwarz_double.o build/linsolve_double.o build/coarse_operator_double.o build/coarse_oddeven_double.o build/linalg_double.o build/sse_linalg_double.o build/lapackwrap_double.o build/data_double.o build/operator_double.o build/oddeven_double.o build/ghost_double.o build/setup_double.o build/polyprec_double.o build/sse_coarse_operator_double.o build/init_double.o build/powerit_double.o build/gathering_double.o build/hutchinson_double.o build/vcycle_double.o build/vectorization_dirac_double.o build/coarsening_double.o build/interpolation_double.o build/sse_interpolation_double.o build/gcrodr_double.o build/local_polyprec_double.o    dependencies/lapack-3.9.0/liblapacke.a dependencies/lapack-3.9.0/liblapack.a dependencies/lapack-3.9.0/librefblas.a -lm -lgfortran
+ar rc lib/libDDalphaAMG.a build/DDalphaAMG_interface.o build/solver_analysis.o build/io.o build/top_level.o build/preconditioner.o build/linalg.o build/main.o build/sse_linalg.o build/data_layout.o build/threading.o build/ghost.o build/lime_io.o build/init.o build/dirac.o build/sse_dirac.o build/var_table.o build/linsolve.o build/dirac_float.o build/block_jacobi_float.o build/schwarz_float.o build/linsolve_float.o build/coarse_operator_float.o build/coarse_oddeven_float.o build/linalg_float.o build/sse_linalg_float.o build/lapackwrap_float.o build/data_float.o build/operator_float.o build/oddeven_float.o build/ghost_float.o build/setup_float.o build/polyprec_float.o build/sse_coarse_operator_float.o build/init_float.o build/powerit_float.o build/gathering_float.o build/hutchinson_float.o build/vcycle_float.o build/vectorization_dirac_float.o build/coarsening_float.o build/interpolation_float.o build/sse_interpolation_float.o build/gcrodr_float.o build/local_polyprec_float.o build/dirac_double.o build/block_jacobi_double.o build/schwarz_double.o build/linsolve_double.o build/coarse_operator_double.o build/coarse_oddeven_double.o build/linalg_double.o build/sse_linalg_double.o build/lapackwrap_double.o build/data_double.o build/operator_double.o build/oddeven_double.o build/ghost_double.o build/setup_double.o build/polyprec_double.o build/sse_coarse_operator_double.o build/init_double.o build/powerit_double.o build/gathering_double.o build/hutchinson_double.o build/vcycle_double.o build/vectorization_dirac_double.o build/coarsening_double.o build/interpolation_double.o build/sse_interpolation_double.o build/gcrodr_double.o build/local_polyprec_double.o
+ar d lib/libDDalphaAMG.a main.o
+ranlib lib/libDDalphaAMG.a
+mpicc -g -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp   -DDEBUG -DPARAMOUTPUT -DTRACK_RES -DFGMRES_RESTEST -DPROFILING -DCOARSE_RES -DSCHWARZ_RES -DTESTVECTOR_ANALYSIS -DOPENMP  -o bin/DDalphaAMG_devel build/DDalphaAMG_interface_devel.o build/solver_analysis_devel.o build/io_devel.o build/top_level_devel.o build/preconditioner_devel.o build/linalg_devel.o build/main_devel.o build/sse_linalg_devel.o build/data_layout_devel.o build/threading_devel.o build/ghost_devel.o build/lime_io_devel.o build/init_devel.o build/dirac_devel.o build/sse_dirac_devel.o build/var_table_devel.o build/linsolve_devel.o build/dirac_float_devel.o build/block_jacobi_float_devel.o build/schwarz_float_devel.o build/linsolve_float_devel.o build/coarse_operator_float_devel.o build/coarse_oddeven_float_devel.o build/linalg_float_devel.o build/sse_linalg_float_devel.o build/lapackwrap_float_devel.o build/data_float_devel.o build/operator_float_devel.o build/oddeven_float_devel.o build/ghost_float_devel.o build/setup_float_devel.o build/polyprec_float_devel.o build/sse_coarse_operator_float_devel.o build/init_float_devel.o build/powerit_float_devel.o build/gathering_float_devel.o build/hutchinson_float_devel.o build/vcycle_float_devel.o build/vectorization_dirac_float_devel.o build/coarsening_float_devel.o build/interpolation_float_devel.o build/sse_interpolation_float_devel.o build/gcrodr_float_devel.o build/local_polyprec_float_devel.o build/dirac_double_devel.o build/block_jacobi_double_devel.o build/schwarz_double_devel.o build/linsolve_double_devel.o build/coarse_operator_double_devel.o build/coarse_oddeven_double_devel.o build/linalg_double_devel.o build/sse_linalg_double_devel.o build/lapackwrap_double_devel.o build/data_double_devel.o build/operator_double_devel.o build/oddeven_double_devel.o build/ghost_double_devel.o build/setup_double_devel.o build/polyprec_double_devel.o build/sse_coarse_operator_double_devel.o build/init_double_devel.o build/powerit_double_devel.o build/gathering_double_devel.o build/hutchinson_double_devel.o build/vcycle_double_devel.o build/vectorization_dirac_double_devel.o build/coarsening_double_devel.o build/interpolation_double_devel.o build/sse_interpolation_double_devel.o build/gcrodr_double_devel.o build/local_polyprec_double_devel.o    dependencies/lapack-3.9.0/liblapacke.a dependencies/lapack-3.9.0/liblapack.a dependencies/lapack-3.9.0/librefblas.a -lm -lgfortran
+ar rc lib/libDDalphaAMG_devel.a build/DDalphaAMG_interface_devel.o build/solver_analysis_devel.o build/io_devel.o build/top_level_devel.o build/preconditioner_devel.o build/linalg_devel.o build/main_devel.o build/sse_linalg_devel.o build/data_layout_devel.o build/threading_devel.o build/ghost_devel.o build/lime_io_devel.o build/init_devel.o build/dirac_devel.o build/sse_dirac_devel.o build/var_table_devel.o build/linsolve_devel.o build/dirac_float_devel.o build/block_jacobi_float_devel.o build/schwarz_float_devel.o build/linsolve_float_devel.o build/coarse_operator_float_devel.o build/coarse_oddeven_float_devel.o build/linalg_float_devel.o build/sse_linalg_float_devel.o build/lapackwrap_float_devel.o build/data_float_devel.o build/operator_float_devel.o build/oddeven_float_devel.o build/ghost_float_devel.o build/setup_float_devel.o build/polyprec_float_devel.o build/sse_coarse_operator_float_devel.o build/init_float_devel.o build/powerit_float_devel.o build/gathering_float_devel.o build/hutchinson_float_devel.o build/vcycle_float_devel.o build/vectorization_dirac_float_devel.o build/coarsening_float_devel.o build/interpolation_float_devel.o build/sse_interpolation_float_devel.o build/gcrodr_float_devel.o build/local_polyprec_float_devel.o build/dirac_double_devel.o build/block_jacobi_double_devel.o build/schwarz_double_devel.o build/linsolve_double_devel.o build/coarse_operator_double_devel.o build/coarse_oddeven_double_devel.o build/linalg_double_devel.o build/sse_linalg_double_devel.o build/lapackwrap_double_devel.o build/data_double_devel.o build/operator_double_devel.o build/oddeven_double_devel.o build/ghost_double_devel.o build/setup_double_devel.o build/polyprec_double_devel.o build/sse_coarse_operator_double_devel.o build/init_double_devel.o build/powerit_double_devel.o build/gathering_double_devel.o build/hutchinson_double_devel.o build/vcycle_double_devel.o build/vectorization_dirac_double_devel.o build/coarsening_double_devel.o build/interpolation_double_devel.o build/sse_interpolation_double_devel.o build/gcrodr_double_devel.o build/local_polyprec_double_devel.o
+ar d lib/libDDalphaAMG_devel.a main.o
+ranlib lib/libDDalphaAMG_devel.a
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp  -o tests/DDalphaAMG_sample tests/DDalphaAMG_sample.c -Iinclude -Idependencies/lapack-3.9.0/LAPACKE/include -Llib -lDDalphaAMG   dependencies/lapack-3.9.0/liblapacke.a dependencies/lapack-3.9.0/liblapack.a dependencies/lapack-3.9.0/librefblas.a -lm -lgfortran
+mpicc -std=gnu99 -Wall -pedantic -O3 -ffast-math -fopenmp  -o tests/DDalphaAMG_proj_test tests/DDalphaAMG_proj_test.c -Iinclude -Idependencies/lapack-3.9.0/LAPACKE/include -Llib -lDDalphaAMG   dependencies/lapack-3.9.0/liblapacke.a dependencies/lapack-3.9.0/liblapack.a dependencies/lapack-3.9.0/librefblas.a -lm -lgfortran
+
++- subspace correction methods for QCD applications -+
+|                                                    |
+|  Use option >> -? << for help                      |
+|                                                    |
++----------------------------------------------------+
+
+
+Number of Processes: 2592
+Program is being started...
+
+
+
++----------------------------------------------------------+
+| The DDalphaAMG solver library.                           |
+| Copyright (C) 2016, Matthias Rottmann, Artur Strebel,    |
+|       Simon Heybrock, Simone Bacchio, Bjoern Leder.      |
+|                                                          |
+| This program comes with ABSOLUTELY NO WARRANTY.          |
++----------------------------------------------------------+
+
+Time for initial phase of DDalphaAMG : 95.007592
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Time for iterative phase of DDalphaAMG : 13472.723594
+
+BPI : level 0, request 0
+BPI : level 1, request 0
+BPI : level 2, request 0
+BPI : level 3, request 0
+Time for block power iteration : 0.000027
+
+Using (split) MGMLMC for computing the trace
+ORTHOGONAL ONLY
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1, trace: 533816785.123783+7874.721075, variance: 27447016.892888] [2, trace: 533813920.552856+3551.651364, variance: 54341715.206408] [3, trace: 533816787.502475+1516.818634, variance: 84447352.246374] [4, trace: 533814267.726929+1200.234102, variance: 97594883.555963] [5, trace: 533815461.131767+2343.000242, variance: 101444419.018038] [6, trace: 533815271.285991+3753.850174, variance: 97939094.611811] [7, trace: 533814767.194104+3486.245645, variance: 94695716.506040] [8, trace: 533814530.530190+2968.979971, variance: 85177365.514903] [9, trace: 533814938.301874+2434.467583, variance: 78466162.750764] [10, trace: 533814610.019313+2736.286468, variance: 74479458.602429] [11, trace: 533814203.991666+3669.170154, variance: 70551584.417849] [12, trace: 533814331.374292+2990.569076, variance: 75586576.570645] [13, trace: 533814771.197402+3082.635477, variance: 75254799.647022] [14, trace: 533814785.993901+2917.413765, variance: 72344443.943270] [15, trace: 533814100.076580+2961.766913, variance: 68353488.218737] [16, trace: 533813969.373960+3112.842877, variance: 70765127.267144] [17, trace: 533814357.020639+2381.865056, variance: 67888025.549215] [18, trace: 533814482.728037+1442.267740, variance: 76006723.645461] [19, trace: 533814507.383295+1822.096226, variance: 87475517.393017] [20, trace: 533814505.873249+1845.034842, variance: 85717309.949383] [21, trace: 533814445.635052+2028.713159, variance: 81682965.560736] [22, trace: 533814307.838086+2096.772047, variance: 78742749.272447] [23, trace: 533813882.991694+1938.058622, variance: 76021883.185367] [24, trace: 533813871.945472+1409.889161, variance: 77667016.876183] [25, trace: 533813706.966390+1367.066066, variance: 81019506.477392] [26, trace: 533813925.225238+1095.008602, variance: 78723387.140440] [27, trace: 533813851.372102+828.750373, variance: 78929864.206320] [28, trace: 533814073.033190+394.191201, variance: 78336683.481240] [29, trace: 533814131.203316+433.910924, variance: 82073919.416338] [30, trace: 533814214.905500+438.375825, variance: 79484233.235987] [31, trace: 533814023.624000+584.817944, variance: 77182239.998056] [32, trace: 533814022.244305+863.784505, variance: 76590949.992321] [33, trace: 533813945.711263+707.084720, variance: 76715334.174529] [34, trace: 533814004.985652+387.649196, variance: 75538635.932453] [35, trace: 533814268.509312+575.856278, variance: 76971504.331659] [36, trace: 533814153.906751+245.490261, variance: 78524060.652460] [37, trace: 533814067.899701+214.909925, variance: 80693066.676844] [38, trace: 533813943.167631+-8.067702, variance: 78935026.615310] [39, trace: 533814127.929526+-150.220430, variance: 79382322.817965] [40, trace: 533814182.321829+-196.772515, variance: 79469334.502455] [41, trace: 533814444.648832+-318.309813, variance: 77814668.988359] [42, trace: 533814295.119960+-71.905155, variance: 79390473.907359] [43, trace: 533814553.803738+-195.745558, variance: 81034409.207812] [44, trace: 533814339.649077+-227.938250, variance: 82696143.252141] [45, trace: 533814313.907328+-162.048635, variance: 82881136.740805] [46, trace: 533814534.826454+-241.451390, variance: 81354771.217288] [47, trace: 533814409.757087+-119.069246, variance: 82135563.510195] [48, trace: 533814330.706323+30.405205, variance: 81862143.319717] [49, trace: 533814555.069760+440.254901, variance: 81754193.398084] [50, trace: 533814775.691587+402.497787, variance: 90652730.211814] [51, trace: 533814900.792807+159.060882, variance: 91405999.816399] [52, trace: 533814924.426962+108.551486, variance: 93398334.616041] [53, trace: 533814917.489664+393.374319, variance: 91875931.122682] [54, trace: 533814893.958427+381.191145, variance: 94397683.285358] [55, trace: 533815118.689044+220.305956, variance: 92794976.320668] [56, trace: 533814924.732125+247.147180, variance: 95302573.278146] [57, trace: 533814807.037440+237.061419, variance: 95753910.268166] [58, trace: 533814446.678623+266.612025, variance: 95015363.723858] [59, trace: 533814376.908202+408.136838, variance: 100883754.570569] [60, trace: 533814496.439062+366.017271, variance: 100662871.993618] [61, trace: 533814530.504038+531.720303, variance: 99989181.590491] [62, trace: 533814539.275029+631.239717, variance: 100103970.519106] [63, trace: 533814595.171046+604.997259, variance: 99127833.760410] [64, trace: 533814550.940027+451.562254, variance: 97840927.562933] [65, trace: 533814582.176525+731.020319, variance: 98021564.423196] [66, trace: 533814607.431164+835.145316, variance: 101609708.938627] [67, trace: 533814566.555891+734.349910, variance: 100851335.724802] [68, trace: 533814603.412022+910.919833, variance: 100181750.252382] [69, trace: 533814607.211413+906.104940, variance: 100910215.880472] [70, trace: 533814621.377309+995.672645, variance: 99479423.014076] [71, trace: 533814638.837310+1026.507834, variance: 98647066.062127] [72, trace: 533814752.475460+951.523697, variance: 97383417.850057] [73, trace: 533814805.714963+863.781515, variance: 97376259.233702] [74, trace: 533814731.295564+699.882798, variance: 96851292.945262] [75, trace: 533814607.780611+691.327741, variance: 97940979.164115] [76, trace: 533814648.778469+642.731408, variance: 97790882.009436] [77, trace: 533814682.770617+764.908773, variance: 96840187.920344] [78, trace: 533814670.018364+1064.283917, variance: 96910932.212216] [79, trace: 533814718.990341+881.090112, variance: 102634989.784826] [80, trace: 533814548.614299+907.288403, variance: 104186957.754622] [81, trace: 533814565.033101+883.674480, variance: 105249326.412345] [82, trace: 533814544.681620+874.084337, variance: 104032489.834783] [83, trace: 533814658.022717+892.107249, variance: 102833261.913186] [84, trace: 533814597.255730+963.264291, variance: 102697993.583879] [85, trace: 533814557.601953+1068.864565, variance: 102229352.704523] [86, trace: 533814453.255446+956.403127, variance: 102133125.573628] [87, trace: 533814311.814970+971.028655, variance: 102980211.788985] [88, trace: 533814294.025399+926.131693, variance: 103551405.093581] [89, trace: 533814308.877897+859.209838, variance: 102595533.423784] [90, trace: 533814268.746806+807.229487, variance: 101873471.291766] [91, trace: 533814299.803345+825.417366, variance: 101139134.353990] [92, trace: 533814203.473108+765.889109, variance: 100169210.826090] [93, trace: 533814188.944872+729.710273, variance: 100260685.055251] [94, trace: 533814219.788707+754.252388, variance: 99335489.807855] [95, trace: 533814253.300577+584.681619, variance: 98464236.873493] [96, trace: 533814286.031714+541.398097, variance: 100250289.142822] [97, trace: 533814348.724590+754.350770, variance: 99545845.707777] [98, trace: 533814379.250593+857.237468, variance: 103272898.941822] [99, trace: 533814369.770265+692.780161, variance: 103374189.185770] [100, trace: 533814351.710424+712.623409, variance: 105000774.648965] [101, trace: 533814304.216040+797.039782, variance: 104041823.308230] [102, trace: 533814379.464038+867.165797, variance: 103970661.378202] [103, trace: 533814454.223936+902.325125, variance: 104036737.253423] [104, trace: 533814551.733411+859.182386, variance: 103743991.542617] [105, trace: 533814577.114795+835.379491, variance: 103928320.144434] [106, trace: 533814563.012624+728.979335, variance: 103085317.999933] [107, trace: 533814504.031765+690.804344, variance: 103336533.332779] [108, trace: 533814348.112830+645.182502, variance: 102929374.943763] [109, trace: 533814376.521918+578.035116, variance: 104814577.900462] [110, trace: 533814327.610939+801.034370, variance: 104487998.936767] [111, trace: 533814325.552765+627.433696, variance: 109258460.310662] [112, trace: 533814220.057945+714.645331, variance: 111617499.818283] [113, trace: 533814237.583280+699.074622, variance: 112710037.641621] [114, trace: 533814187.219923+701.779746, variance: 111785455.152448] [115, trace: 533814236.448189+635.661406, variance: 111107672.653318] [116, trace: 533814220.111668+646.220716, variance: 110924921.362414] [117, trace: 533814126.297916+693.869413, variance: 110031433.576617] [118, trace: 533814130.622113+773.849995, variance: 110389757.749869] [119, trace: 533814141.136210+880.537071, variance: 110224283.588670] [120, trace: 533814159.292500+1009.104279, variance: 110678838.907411] [121, trace: 533814158.103997+844.281550, variance: 111797687.197319] [122, trace: 533814204.494873+882.432202, variance: 114145296.337917] [123, trace: 533814208.609903+807.558482, variance: 113659455.991731] [124, trace: 533814210.885260+901.642709, variance: 113437756.749892] [125, trace: 533814254.325168+739.588528, variance: 113647887.465354] [126, trace: 533814319.905565+716.127494, variance: 116241419.013736] [127, trace: 533814379.673715+791.750229, variance: 115941862.556136] [128, trace: 533814398.804403+781.105266, variance: 116207288.390774] [129, trace: 533814348.778981+675.971971, variance: 115380886.866423] [130, trace: 533814358.575963+693.681007, variance: 116228966.174172] [131, trace: 533814357.996967+727.133555, variance: 115395681.908005] [132, trace: 533814290.824521+644.987392, variance: 114678263.868115] [133, trace: 533814283.356398+760.083721, variance: 115304485.870894] [134, trace: 533814228.224439+905.952138, variance: 116224408.839364] [135, trace: 533814204.050628+882.467144, variance: 118598981.337743] [136, trace: 533814213.873294+973.472773, variance: 117887529.889151] [137, trace: 533814263.551675+912.721372, variance: 118164355.553847] [138, trace: 533814292.525499+938.714054, variance: 118147231.536716] [139, trace: 533814244.010132+975.970878, variance: 117508573.132078] [140, trace: 533814300.607163+834.550245, variance: 117208825.949428] [141, trace: 533814256.960153+894.617854, variance: 119608455.121462] [142, trace: 533814218.862149+815.067081, variance: 119545805.746490] [143, trace: 533814199.249189+766.392281, variance: 119809578.848105] [144, trace: 533814233.187850+684.195988, variance: 119376549.490383] [145, trace: 533814188.017352+683.318804, variance: 119686211.675162] [146, trace: 533814234.307729+704.630444, variance: 119162978.713876] [147, trace: 533814283.147420+726.113777, variance: 118731773.548429] [148, trace: 533814305.436249+746.697376, variance: 118346111.507331] [149, trace: 533814253.459167+793.941932, variance: 117692092.178836] [150, trace: 533814213.558596+709.296722, variance: 117646450.432592] [151, trace: 533814247.980311+712.181113, variance: 118173359.239760] [152, trace: 533814243.700355+711.020814, variance: 117574906.574354] [153, trace: 533814201.377468+733.645041, variance: 116811715.655458] [154, trace: 533814233.709712+684.857264, variance: 116406707.132937] [155, trace: 533814218.548099+629.097339, variance: 116183177.317554] [156, trace: 533814200.630322+660.057078, variance: 115953927.051856] [157, trace: 533814183.081868+580.996002, variance: 115420264.347133] [158, trace: 533814239.717863+638.407581, variance: 115719443.484703] [159, trace: 533814159.752713+745.813706, variance: 116030704.532448] [160, trace: 533814095.961028+742.057989, variance: 118142727.319764] [161, trace: 533814142.777861+673.065681, variance: 118065172.709979] [162, trace: 533814116.478431+751.988890, variance: 118455619.514894] [163, trace: 533814122.942189+685.318938, variance: 118847632.839740] [164, trace: 533814106.779414+712.951350, variance: 118850843.628782] [165, trace: 533814092.810524+728.132746, variance: 118298007.337650] [166, trace: 533814110.969709+723.784061, variance: 117655519.134693] [167, trace: 533814100.284282+805.043445, variance: 117015244.486459] [168, trace: 533814128.876078+882.784914, variance: 117440692.517716] [169, trace: 533814107.845790+971.374041, variance: 117899932.959858] [170, trace: 533814073.861451+1017.733569, variance: 118602528.310467] [171, trace: 533814096.003077+991.342432, variance: 118468552.186792] [172, trace: 533814133.523621+1029.884609, variance: 117984428.149536] [173, trace: 533814142.042213+956.439363, variance: 117802673.421918] [174, trace: 533814068.315436+950.583581, variance: 118071432.459071] [175, trace: 533814035.062134+930.631515, variance: 118344571.193812] [176, trace: 533814014.984382+878.049791, variance: 117937008.223047] [177, trace: 533814010.120905+806.274962, variance: 117830282.542901] [178, trace: 533813995.120968+749.902214, variance: 118082595.804418] [179, trace: 533813996.562404+767.471671, variance: 118025556.888855] [180, trace: 533814005.254750+848.000245, variance: 117431737.397088] [181, trace: 533813964.287233+839.615060, variance: 117959041.214190] [182, trace: 533813945.013435+892.596293, variance: 117628859.490828] [183, trace: 533813961.420256+880.761910, variance: 117561812.184399] [184, trace: 533813936.048864+900.904606, variance: 116998421.972564] [185, trace: 533813915.748042+898.577653, variance: 116558468.017116] [186, trace: 533813919.351012+968.001379, variance: 116013471.478039] [187, trace: 533813849.832197+1049.250870, variance: 116298576.259169] [188, trace: 533813874.245414+1014.150367, variance: 117808643.949168] [189, trace: 533813871.108958+970.754331, variance: 117529065.952564] [190, trace: 533813924.986695+917.876458, variance: 117272094.791505] [191, trace: 533813899.734709+916.536377, variance: 117735862.384080] [192, trace: 533813834.937307+915.943538, variance: 117248354.290827] [193, trace: 533813854.724190+917.103497, variance: 117443283.959752] [194, trace: 533813880.779352+992.112755, variance: 116919643.812475] [195, trace: 533813933.025930+961.924325, variance: 117540644.485621] [196, trace: 533813909.311226+965.613713, variance: 117647904.866364] [197, trace: 533813910.552054+886.674991, variance: 117169262.931539] [198, trace: 533813921.327311+903.956311, variance: 117799586.051982] [199, trace: 533813912.209107+885.952137, variance: 117289743.493135] [200, trace: 533813934.027794+929.293170, variance: 116786295.111059] [201, trace: 533813876.191878+894.899269, variance: 116678353.958344] [202, trace: 533813892.271569+931.277708, variance: 117007929.427371] [203, trace: 533813915.399499+927.244866, variance: 116750066.050425] [204, trace: 533813936.958121+849.063075, variance: 116295676.992961] [205, trace: 533813968.497581+876.823885, variance: 117065343.314007] [206, trace: 533813965.840794+870.081557, variance: 116857267.659588] [207, trace: 533813982.840737+778.363560, variance: 116312207.326077] [208, trace: 533813943.188559+846.991544, variance: 117551782.916442] [209, trace: 533813920.871525+904.106418, variance: 118293518.150312] [210, trace: 533813921.979728+852.343584, variance: 118515027.255694] [211, trace: 533813878.470493+876.741679, variance: 118516095.073222] [212, trace: 533813880.871416+873.849892, variance: 118479630.086423] [213, trace: 533813929.580321+812.389119, variance: 117932518.510808] [214, trace: 533813960.474918+806.144016, variance: 118686250.824469] [215, trace: 533813964.419537+809.285268, variance: 118345862.488693] [216, trace: 533813954.897419+754.458260, variance: 117806503.249110] [217, trace: 533813946.622097+732.425126, variance: 117929968.720314] [218, trace: 533813949.987342+727.389591, variance: 117508695.815546] [219, trace: 533813974.208474+679.856714, variance: 116982932.515654] [220, trace: 533814026.452092+748.603154, variance: 117079096.522338] [221, trace: 533814075.148845+663.142994, variance: 118191783.051412] [222, trace: 533814022.571867+687.412489, variance: 119791243.343728] [223, trace: 533814029.726771+675.301112, variance: 119995365.500624] [224, trace: 533814024.274220+683.715512, variance: 119503702.257491] [225, trace: 533814043.638173+673.130384, variance: 118995480.879711] [226, trace: 533814083.466387+668.525067, variance: 118579651.562332] [227, trace: 533814045.842292+693.776937, variance: 118421021.064164] [228, trace: 533814030.664714+631.121837, variance: 118369825.515869] [229, trace: 533814043.157590+619.281708, variance: 118796657.771137] [230, trace: 533814054.301984+665.671400, variance: 118349975.467022] [231, trace: 533814054.124123+700.384905, variance: 118360102.863958] [232, trace: 533814033.652438+673.073784, variance: 118128263.778213] [233, trace: 533814053.927726+660.359984, variance: 117890965.300604] [234, trace: 533814043.697386+664.983099, variance: 117520159.136189] [235, trace: 533814032.548497+662.203759, variance: 117049571.608480] [236, trace: 533813992.488134+618.042832, variance: 116588047.684148] [237, trace: 533813995.170303+601.144458, variance: 116931852.486208] [238, trace: 533813938.761607+550.742317, variance: 116515354.503051] [239, trace: 533813998.824084+465.809976, variance: 117394876.587374] [240, trace: 533814003.682311+417.167468, variance: 119483564.936332] [241, trace: 533813990.434075+432.847938, variance: 119559351.146779] [242, trace: 533813968.955088+405.889944, variance: 119167628.356678] [243, trace: 533813974.092942+361.331284, variance: 118965570.710246] [244, trace: 533813967.326987+385.159348, variance: 118965501.648580] [245, trace: 533813969.721188+424.062383, variance: 118630543.662627] [246, trace: 533813919.258927+450.089431, variance: 118522215.211570] [247, trace: 533813904.213024+408.853932, variance: 118834150.497336] [248, trace: 533813902.486405+348.994942, variance: 118832553.799708] [249, trace: 533813885.932395+335.018991, variance: 119241560.135000] [250, trace: 533813870.781230+314.058946, variance: 118881666.538137] [251, trace: 533813878.665716+285.914661, variance: 118575442.766286] [252, trace: 533813907.942839+293.937885, variance: 118319396.680519] [253, trace: 533813914.376062+288.818462, variance: 118083104.353810] [254, trace: 533813925.455161+308.790275, variance: 117635766.029359] [255, trace: 533813919.314761+298.849142, variance: 117306557.675703] [256, trace: 533813942.457637+297.749651, variance: 116883545.056483] [257, trace: 533813923.694713+415.226389, variance: 116579784.596003] [258, trace: 533813956.145012+392.380984, variance: 119752679.566625] [259, trace: 533813901.405204+353.600319, variance: 119699578.623522] [260, trace: 533813894.408306+308.749905, variance: 120402373.188121] [261, trace: 533813862.127695+278.590219, variance: 120476694.657756] [262, trace: 533813889.237132+253.391851, variance: 120525664.831504] [263, trace: 533813881.692908+243.690974, variance: 120425087.084353] [264, trace: 533813899.685921+284.939164, variance: 120010525.038625] [265, trace: 533813933.894521+340.777342, variance: 120094568.432065] [266, trace: 533813984.732170+398.973886, variance: 120781138.950297] [267, trace: 533813966.176672+442.497679, variance: 121913431.760263] [268, trace: 533813983.139624+459.879822, variance: 122054603.929848] [269, trace: 533813938.362345+502.647313, variance: 121762203.725203] [270, trace: 533813937.619216+525.190579, variance: 122339284.437937] [271, trace: 533813895.222698+490.863775, variance: 122027679.672409] [272, trace: 533813871.704562+531.164424, variance: 122384701.106045] [273, trace: 533813853.984905+506.262669, variance: 122527380.954886] [274, trace: 533813857.352263+481.676829, variance: 122334890.708220] [275, trace: 533813867.884299+497.956025, variance: 122058528.849335] [276, trace: 533813848.815978+516.597875, variance: 121720006.750944] [277, trace: 533813856.371610+499.590620, variance: 121476491.097356] [278, trace: 533813856.514070+508.123935, variance: 121135187.656873] [279, trace: 533813869.347479+520.012722, variance: 120721493.718403] [280, trace: 533813852.643702+464.863417, variance: 120378746.095800] [281, trace: 533813900.082399+479.532811, variance: 120879238.297159] [282, trace: 533813867.452433+493.468078, variance: 121142230.064265] [283, trace: 533813900.680566+451.405139, variance: 121070796.178866] [284, trace: 533813907.775105+470.410609, variance: 121455210.929144] [285, trace: 533813903.920921+487.935437, variance: 121145841.643797] [286, trace: 533813905.363190+510.144345, variance: 120814191.935586] [287, trace: 533813907.008081+532.384105, variance: 120534900.585029] [288, trace: 533813904.090935+509.789361, variance: 120259128.780029] [289, trace: 533813879.784600+479.138327, variance: 119993501.548891] [290, trace: 533813875.421145+455.840925, variance: 120021019.676148] [291, trace: 533813887.665705+436.148744, variance: 119771478.649756] [292, trace: 533813902.313045+469.108281, variance: 119518541.333091] [293, trace: 533813895.727400+489.181415, variance: 119489633.775530] [294, trace: 533813892.832763+473.734993, variance: 119213774.954837] [295, trace: 533813862.472718+466.329788, variance: 118883000.338487] [296, trace: 533813865.870346+437.223603, variance: 118769342.005492] [297, trace: 533813853.277312+425.596245, variance: 118623062.492845] [298, trace: 533813878.277434+410.601729, variance: 118312808.216978] [299, trace: 533813885.434960+365.577175, variance: 118171597.430938] [300, trace: 533813918.666731+389.955357, variance: 118398772.995202] [301, trace: 533813933.911817+410.146889, variance: 118513962.625420] [302, trace: 533813922.373137+447.340096, variance: 118315084.060331] [303, trace: 533813926.595862+410.828261, variance: 118382420.388350] [304, trace: 533813885.053371+386.235595, variance: 118403325.094199] [305, trace: 533813891.090508+477.847102, variance: 118729719.287822] [306, trace: 533813897.816038+459.509793, variance: 120904573.732888] [307, trace: 533813903.663546+513.671328, variance: 120630071.017146] [308, trace: 533813945.233374+520.284538, variance: 121148301.933360] [309, trace: 533813964.655696+529.029264, variance: 121300633.694245] [310, trace: 533813970.243753+528.850012, variance: 121049112.678399] [311, trace: 533813993.920721+544.648810, variance: 120670356.416058] [312, trace: 533813987.335501+581.298334, variance: 120536143.863629] [313, trace: 533813963.324665+551.025477, variance: 120583759.663518] [314, trace: 533813924.408331+549.318208, variance: 120667062.542327] [315, trace: 533813959.721092+580.905605, variance: 120761186.966176] [316, trace: 533813935.778835+616.317184, variance: 121085718.619734] [317, trace: 533813903.576112+604.404511, variance: 121280501.109901] [318, trace: 533813915.494777+573.914903, variance: 121272732.252844] [319, trace: 533813928.608630+513.665213, variance: 121236091.947285] [320, trace: 533813931.584468+506.279634, variance: 122066339.884321] [321, trace: 533813963.655943+564.441600, variance: 121710707.869497] [322, trace: 533813982.875571+663.975664, variance: 122754660.443017] [323, trace: 533813988.328788+664.957961, variance: 125673409.728897] [324, trace: 533814012.715355+622.222309, variance: 125297836.169876] [325, trace: 533813979.924312+630.587566, variance: 125695453.153569] [326, trace: 533813982.164987+593.961596, variance: 125682288.785977] [327, trace: 533813967.392260+577.663974, variance: 125736033.981626] [328, trace: 533813979.021671+601.596419, variance: 125511135.666988] [329, trace: 533813985.171763+622.883060, variance: 125361653.619845] [330, trace: 533813975.956287+591.158220, variance: 125143892.568661] [331, trace: 533814008.685090+533.326334, variance: 125129300.826023] [332, trace: 533814054.923904+535.967953, variance: 126211745.160508] [333, trace: 533814097.377378+565.032033, variance: 126545381.380776] [334, trace: 533814087.154157+603.470684, variance: 127046902.980757] [335, trace: 533814100.525706+633.953336, variance: 127195591.899662] [336, trace: 533814079.311708+638.631035, variance: 127187577.594502] [337, trace: 533814072.762867+648.498829, variance: 126968399.434500] [338, trace: 533814073.795121+654.962565, variance: 126639924.127966] [339, trace: 533814077.543158+637.760301, variance: 126281104.033009] [340, trace: 533814060.573904+646.713307, variance: 126014826.438634] [341, trace: 533814046.574036+675.262772, variance: 125771083.570313] [342, trace: 533814039.890460+642.502059, variance: 125748215.963017] [343, trace: 533814067.997890+654.297261, variance: 125763751.172318] [344, trace: 533814097.061808+621.763957, variance: 125717835.505069] [345, trace: 533814095.251105+620.935649, variance: 126006218.089635] [346, trace: 533814093.628449+617.490919, variance: 125643416.650312] [347, trace: 533814085.709318+617.982400, variance: 125286397.088450] [348, trace: 533814069.079084+608.274365, variance: 124948531.845656] [349, trace: 533814053.928442+591.186360, variance: 124719707.023079] [350, trace: 533814079.325686+578.192660, variance: 124545676.922868] [351, trace: 533814073.108245+670.923419, variance: 124483521.742252] [352, trace: 533814086.930903+670.357321, variance: 127153268.879971] [353, trace: 533814076.113320+659.832767, variance: 126860466.260758] [354, trace: 533814101.914445+663.700262, variance: 126582965.452462] [355, trace: 533814070.434155+685.452537, variance: 126468131.206024] [356, trace: 533814063.726452+706.833945, variance: 126631706.145274] [357, trace: 533814065.611797+664.755694, variance: 126457037.075037] [358, trace: 533814069.082703+617.687058, variance: 126737629.216455] [359, trace: 533814083.624624+632.539511, variance: 127180256.689755] [360, trace: 533814087.773009+624.711273, variance: 126981736.379606] [361, trace: 533814084.777991+609.470502, variance: 126658405.943294] [362, trace: 533814081.334426+597.912010, variance: 126395517.413973] [363, trace: 533814074.654483+584.201951, variance: 126100063.314376] [364, trace: 533814095.653525+582.009820, variance: 125838277.594479] [365, trace: 533814088.427421+601.941800, variance: 125655778.680072] [366, trace: 533814056.801448+634.117618, variance: 125478111.741175] [367, trace: 533814057.313274+580.169712, variance: 125882077.890779] [368, trace: 533814070.278043+566.060824, variance: 126605675.808407] [369, trace: 533814086.422623+530.533408, variance: 126398837.395336] [370, trace: 533814074.377849+509.607496, variance: 126618212.878894] [371, trace: 533814089.732659+488.243869, variance: 126492733.710849] [372, trace: 533814104.673868+468.598455, variance: 126409415.178571] [373, trace: 533814120.292720+438.495452, variance: 126297674.257022] [374, trace: 533814130.789962+493.490594, variance: 126390969.492698] [375, trace: 533814137.659049+463.191037, variance: 127224127.854700] [376, trace: 533814134.257991+449.479269, variance: 127246970.533902] [377, trace: 533814139.290075+471.161078, variance: 126984783.787132] [378, trace: 533814120.094831+432.196290, variance: 126837012.175595] [379, trace: 533814120.940695+428.885869, variance: 127213656.989234] [380, trace: 533814111.661324+430.940676, variance: 126883387.481057] [381, trace: 533814091.367500+397.132358, variance: 126586149.971262] [382, trace: 533814087.921687+417.913773, variance: 126846060.249030] [383, trace: 533814093.766963+446.353184, variance: 126684778.866956] [384, trace: 533814087.835098+426.621135, variance: 126677310.849654] [385, trace: 533814093.455534+411.544739, variance: 126511137.984788] [386, trace: 533814118.315691+392.355315, variance: 126283788.462995] [387, trace: 533814119.551781+404.926641, variance: 126337346.524294] [388, trace: 533814104.495980+405.817854, variance: 126073555.230900] [389, trace: 533814086.846226+439.397986, variance: 125838929.853185] [390, trace: 533814086.587863+420.404980, variance: 126075016.401664] [391, trace: 533814093.608339+408.776133, variance: 125893110.946202] [392, trace: 533814118.520898+414.276048, variance: 125644568.105525] [393, trace: 533814134.826632+386.859354, variance: 125580376.926922] [394, trace: 533814175.487270+386.767315, variance: 125662181.297499] [395, trace: 533814181.067153+380.454640, variance: 125993869.686229] [396, trace: 533814198.427186+370.380129, variance: 125704074.462611] [397, trace: 533814198.616235+371.552538, variance: 125546574.225842] [398, trace: 533814207.904993+382.284931, variance: 125231890.512317] [399, trace: 533814202.338620+355.055408, variance: 124998780.777391] [400, trace: 533814176.713968+345.660018, variance: 124994458.352754] [401, trace: 533814190.544766+351.060706, variance: 124980187.364746] [402, trace: 533814199.710008+372.662864, variance: 124758025.949996] [403, trace: 533814214.918232+388.352204, variance: 124669744.109904] [404, trace: 533814218.712085+394.105579, variance: 124553137.384372] [405, trace: 533814236.266875+386.337626, variance: 124265107.747203] [406, trace: 533814212.909616+357.474506, variance: 124109294.356299] [407, trace: 533814207.951224+380.969415, variance: 124363287.211706] [408, trace: 533814195.027361+388.226128, variance: 124292794.467895] [409, trace: 533814197.521481+371.872325, variance: 124078586.570165] [410, trace: 533814182.329785+356.603991, variance: 123888076.789922] [411, trace: 533814166.749514+383.184248, variance: 123777335.380709] [412, trace: 533814155.128825+409.244166, variance: 123866915.918959] [413, trace: 533814156.156794+343.959468, variance: 123905880.793055] [414, trace: 533814166.315064+352.448544, variance: 125363193.942347] [415, trace: 533814164.213682+366.508942, variance: 125133696.745439] [416, trace: 533814187.436047+348.035906, variance: 124917449.391919] [417, trace: 533814199.861520+339.217599, variance: 124983541.916101] [418, trace: 533814230.769666+322.827531, variance: 124782339.169650] [419, trace: 533814249.345425+320.839521, variance: 124995267.469468] [420, trace: 533814217.208297+346.902094, variance: 124845259.188247] [421, trace: 533814208.260135+332.954034, variance: 125266343.415893] [422, trace: 533814200.303018+306.118851, variance: 125085627.392978] [423, trace: 533814219.812149+338.437418, variance: 125121173.025785] [424, trace: 533814203.962034+365.417101, variance: 125428448.902998] [425, trace: 533814218.556528+350.898675, variance: 125547920.980652] [426, trace: 533814220.669990+348.810685, variance: 125432901.769080] [427, trace: 533814228.826212+369.261719, variance: 125143383.918516] [428, trace: 533814211.585592+382.491115, variance: 125057977.706587] [429, trace: 533814227.863746+379.551013, variance: 124968395.261313] [430, trace: 533814225.801034+440.783567, variance: 124798635.834522] [431, trace: 533814226.755198+430.599519, variance: 126119522.080903] [432, trace: 533814232.624332+428.534970, variance: 125872606.554535] [433, trace: 533814228.617180+425.564431, variance: 125598616.283449] [434, trace: 533814233.816370+423.759749, variance: 125319997.645091] [435, trace: 533814226.203520+406.450134, variance: 125045378.245303] [436, trace: 533814225.433146+380.758957, variance: 124914427.325675] [437, trace: 533814239.739679+371.283350, variance: 124916252.009381] [438, trace: 533814257.322176+354.167686, variance: 124760044.167018] [439, trace: 533814253.471105+342.365520, variance: 124739121.604743] [440, trace: 533814231.799940+336.305529, variance: 124523635.694280] [441, trace: 533814221.532753+329.606190, variance: 124463713.910741] [442, trace: 533814207.853923+343.046016, variance: 124248620.233206] [443, trace: 533814208.234539+315.861618, variance: 124131062.305718] [444, trace: 533814188.870207+336.363900, variance: 124178983.107907] [445, trace: 533814171.646544+371.247017, variance: 124253771.653853] [446, trace: 533814171.900968+382.735350, variance: 124647299.151429] [447, trace: 533814168.692196+430.226766, variance: 124429472.867787] [448, trace: 533814183.552162+409.772613, variance: 125162888.671448] [449, trace: 533814185.085376+387.339696, variance: 125170354.813446] [450, trace: 533814189.370643+380.529798, variance: 125118767.077049] [451, trace: 533814207.238966+378.812413, variance: 124870731.703623] [452, trace: 533814212.798017+335.678157, variance: 124741363.076235] [453, trace: 533814209.052397+347.840832, variance: 125319213.627555] [454, trace: 533814201.781335+361.797012, variance: 125116634.190804] [455, trace: 533814218.021619+372.279263, variance: 124954209.163210] [456, trace: 533814224.532233+353.744192, variance: 124850199.013317] [457, trace: 533814199.645893+345.024612, variance: 124753301.338166] [458, trace: 533814215.856769+340.921585, variance: 124798279.998433] [459, trace: 533814229.424109+364.931018, variance: 124654939.148315] [460, trace: 533814225.333245+359.376020, variance: 124732320.116200] [461, trace: 533814248.702498+349.737024, variance: 124484235.492708] [462, trace: 533814248.829105+375.401632, variance: 124509403.978876] [463, trace: 533814266.482824+363.675528, variance: 124544590.974798] [464, trace: 533814271.031882+359.282015, variance: 124483726.626887] [465, trace: 533814276.299657+375.079271, variance: 124234815.628389] [466, trace: 533814269.826091+362.162508, variance: 124097095.123159] [467, trace: 533814265.121679+357.033593, variance: 123928480.131727] [468, trace: 533814275.124775+382.668641, variance: 123687004.770894] [469, trace: 533814243.253832+406.095249, variance: 123778466.598874] [470, trace: 533814234.553668+404.538714, variance: 124247405.080190] [471, trace: 533814226.554844+414.535611, variance: 124020410.492325] [472, trace: 533814229.660720+429.963176, variance: 123834945.379307] [473, trace: 533814216.544572+417.117670, variance: 123690121.531381] [474, trace: 533814198.667252+384.796839, variance: 123589619.902271] [475, trace: 533814194.220405+409.333445, variance: 123975338.950164] [476, trace: 533814208.048326+374.496597, variance: 124011035.125393] [477, trace: 533814204.445885+352.442927, variance: 124418844.475254] 

@@ -1,0 +1,102 @@
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) OpenSSL/1.1     2) zlib/1.2.11
+
+
+Inactive Modules:
+  1) OpenMPI/4.1.1     3) UCX/1.10.0      5) libfabric/1.12.1
+  2) PMIx/3.2.3        4) hwloc/2.4.1     6) libxml2/2.9.10
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) XZ/5.2.5     2) libevent/2.1.12     3) libpciaccess/0.16     4) numactl/2.0.14
+
+The following have been reloaded with a version change:
+  1) GCC/10.3.0 => GCC/11.3.0             3) binutils/2.36.1 => binutils/2.38
+  2) GCCcore/10.3.0 => GCCcore/11.3.0     4) zlib/1.2.11 => zlib/1.2.12
+
+
+Activating Modules:
+  1) OpenMPI/4.1.4     3) UCX/1.12.1      5) libfabric/1.15.1
+  2) PMIx/4.1.2        4) hwloc/2.7.1     6) libxml2/2.9.13
+
+build/gsrc/hutchinson_float.c: En la función ‘hutchinson_blind_float’:
+build/gsrc/hutchinson_float.c:82:101: nota: the ABI of passing structure with ‘complex float’ member has changed in GCC 4.4
+   82 | struct sample hutchinson_blind_float( level_struct *l, hutchinson_float_struct* h, int type, struct Thread *threading ){
+      |                                                                                                     ^~~~~~
+build/gsrc/hutchinson_float.c: En la función ‘hutchinson_blind_float’:
+build/gsrc/hutchinson_float.c:82:101: nota: the ABI of passing structure with ‘complex float’ member has changed in GCC 4.4
+   82 | struct sample hutchinson_blind_float( level_struct *l, hutchinson_float_struct* h, int type, struct Thread *threading ){
+      |                                                                                                     ^~~~~~
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+[wn21245:58063:0:58063]      cma_ep.c:81   process_vm_readv(pid=58055 {0x2b3f7fadb010,524288}-->{0x6a06b30,524288}) returned -1: No such process
+==== backtrace (tid:  58063) ====
+ 0 0x00000000000037db uct_cma_ep_tx_error()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/sm/scopy/cma/cma_ep.c:81
+ 1 0x0000000000003b06 uct_cma_ep_tx()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/sm/scopy/cma/cma_ep.c:114
+ 2 0x000000000001b7f5 uct_scopy_ep_progress_tx()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/sm/scopy/base/scopy_ep.c:151
+ 3 0x0000000000020232 ucs_arbiter_dispatch_nonempty()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/arbiter.c:321
+ 4 0x000000000001b319 ucs_arbiter_dispatch()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/arbiter.h:386
+ 5 0x00000000000382ea ucs_callbackq_dispatch()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 6 0x00000000000382ea uct_worker_progress()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 7 0x00000000000382ea ucp_worker_progress()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 8 0x000000000002e603 opal_progress()  ???:0
+ 9 0x0000000000050875 ompi_request_default_wait()  ???:0
+10 0x00000000000904c4 MPI_Wait()  ???:0
+11 0x000000000051c426 ghost_update_wait_double()  ???:0
+12 0x00000000004dafc1 red_black_schwarz_double()  ???:0
+13 0x000000000052a3c5 smoother_double()  ???:0
+14 0x000000000052a6c8 vcycle_double()  ???:0
+15 0x0000000000410003 preconditioner()  ???:0
+16 0x00000000004df1c9 arnoldi_step_double()  ???:0
+17 0x00000000004dfc47 fgmres_double()  ???:0
+18 0x0000000000528156 apply_solver_double()  ???:0
+19 0x000000000052985c hutchinson_mlmc_difference_double()  ???:0
+20 0x0000000000526c56 hutchinson_blind_double.constprop.0()  hutchinson_double.c:0
+21 0x00000000005284cb mlmc_hutchinson_driver_double()  ???:0
+22 0x00000000004113b1 main._omp_fn.0()  main.c:0
+23 0x0000000000014bf6 GOMP_parallel()  /tmp/easybuild/rome/GCCcore/11.3.0/system-system/gcc-11.3.0/stage3_obj/x86_64-pc-linux-gnu/libgomp/../../../libgomp/parallel.c:178
+24 0x0000000000014bf6 GOMP_parallel_end()  /tmp/easybuild/rome/GCCcore/11.3.0/system-system/gcc-11.3.0/stage3_obj/x86_64-pc-linux-gnu/libgomp/../../../libgomp/parallel.c:140
+25 0x0000000000014bf6 GOMP_parallel()  /tmp/easybuild/rome/GCCcore/11.3.0/system-system/gcc-11.3.0/stage3_obj/x86_64-pc-linux-gnu/libgomp/../../../libgomp/parallel.c:179
+26 0x00000000004033a7 main()  ???:0
+27 0x0000000000022555 __libc_start_main()  ???:0
+28 0x0000000000403530 _start()  ???:0
+=================================
+[wn21245:58063] *** Process received signal ***
+[wn21245:58063] Signal: Aborted (6)
+[wn21245:58063] Signal code:  (-6)
+[wn21245:58063] [ 0] /lib64/libpthread.so.0(+0xf630)[0x2b3ef9613630]
+[wn21245:58063] [ 1] /lib64/libc.so.6(gsignal+0x37)[0x2b3ef9856387]
+[wn21245:58063] [ 2] /lib64/libc.so.6(abort+0x148)[0x2b3ef9857a78]
+[wn21245:58063] [ 3] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(ucs_fatal_error_message+0x5d)[0x2b3efbfbcb7d]
+[wn21245:58063] [ 4] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2acc3)[0x2b3efbfc0cc3]
+[wn21245:58063] [ 5] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(ucs_log_dispatch+0xd1)[0x2b3efbfc0e31]
+[wn21245:58063] [ 6] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_cma.so.0(+0x37db)[0x2b3f06a7e7db]
+[wn21245:58063] [ 7] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_cma.so.0(uct_cma_ep_tx+0x186)[0x2b3f06a7eb06]
+[wn21245:58063] [ 8] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libuct.so.0(uct_scopy_ep_progress_tx+0x55)[0x2b3efbf787f5]
+[wn21245:58063] [ 9] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(ucs_arbiter_dispatch_nonempty+0xa2)[0x2b3efbfb6232]
+[wn21245:58063] [10] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libuct.so.0(uct_scopy_iface_progress+0x59)[0x2b3efbf78319]
+[wn21245:58063] [11] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x2b3f067f42ea]
+[wn21245:58063] [12] /beegfs/Tools/easybuild/stacks/rome/2022a/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libopen-pal.so.40(opal_progress+0x33)[0x2b3ef9cd7603]
+[wn21245:58063] [13] /beegfs/Tools/easybuild/stacks/rome/2022a/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(ompi_request_default_wait+0x45)[0x2b3ef8eb5875]
+[wn21245:58063] [14] /beegfs/Tools/easybuild/stacks/rome/2022a/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(PMPI_Wait+0x54)[0x2b3ef8ef54c4]
+[wn21245:58063] [15] ./bin/DDalphaAMG[0x51c426]
+[wn21245:58063] [16] ./bin/DDalphaAMG[0x4dafc1]
+[wn21245:58063] [17] ./bin/DDalphaAMG[0x52a3c5]
+[wn21245:58063] [18] ./bin/DDalphaAMG[0x52a6c8]
+[wn21245:58063] [19] ./bin/DDalphaAMG[0x410003]
+[wn21245:58063] [20] ./bin/DDalphaAMG[0x4df1c9]
+[wn21245:58063] [21] ./bin/DDalphaAMG[0x4dfc47]
+[wn21245:58063] [22] ./bin/DDalphaAMG[0x528156]
+[wn21245:58063] [23] ./bin/DDalphaAMG[0x52985c]
+[wn21245:58063] [24] ./bin/DDalphaAMG[0x526c56]
+[wn21245:58063] [25] ./bin/DDalphaAMG[0x5284cb]
+[wn21245:58063] [26] ./bin/DDalphaAMG[0x4113b1]
+[wn21245:58063] [27] /beegfs/Tools/easybuild/stacks/rome/2022a/software/GCCcore/11.3.0/lib64/libgomp.so.1(GOMP_parallel+0x46)[0x2b3ef8fa5bf6]
+[wn21245:58063] [28] ./bin/DDalphaAMG[0x4033a7]
+[wn21245:58063] [29] /lib64/libc.so.6(__libc_start_main+0xf5)[0x2b3ef9842555]
+[wn21245:58063] *** End of error message ***
+--------------------------------------------------------------------------
+mpirun noticed that process rank 240 with PID 170395 on node wn21252 exited on signal 9 (Killed).
+--------------------------------------------------------------------------

@@ -1,0 +1,213 @@
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) OpenSSL/1.1     2) zlib/1.2.11
+
+
+Inactive Modules:
+  1) OpenMPI/4.1.1     3) UCX/1.10.0      5) libfabric/1.12.1
+  2) PMIx/3.2.3        4) hwloc/2.4.1     6) libxml2/2.9.10
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) XZ/5.2.5     2) libevent/2.1.12     3) libpciaccess/0.16     4) numactl/2.0.14
+
+The following have been reloaded with a version change:
+  1) GCC/10.3.0 => GCC/11.3.0             3) binutils/2.36.1 => binutils/2.38
+  2) GCCcore/10.3.0 => GCCcore/11.3.0     4) zlib/1.2.11 => zlib/1.2.12
+
+
+Activating Modules:
+  1) OpenMPI/4.1.4     3) UCX/1.12.1      5) libfabric/1.15.1
+  2) PMIx/4.1.2        4) hwloc/2.7.1     6) libxml2/2.9.13
+
+build/gsrc/hutchinson_float.c: In function ‘hutchinson_blind_float’:
+build/gsrc/hutchinson_float.c:82:101: note: the ABI of passing structure with ‘complex float’ member has changed in GCC 4.4
+   82 | struct sample hutchinson_blind_float( level_struct *l, hutchinson_float_struct* h, int type, struct Thread *threading ){
+      |                                                                                                     ^~~~~~
+build/gsrc/hutchinson_float.c: In function ‘hutchinson_blind_float’:
+build/gsrc/hutchinson_float.c:82:101: note: the ABI of passing structure with ‘complex float’ member has changed in GCC 4.4
+   82 | struct sample hutchinson_blind_float( level_struct *l, hutchinson_float_struct* h, int type, struct Thread *threading ){
+      |                                                                                                     ^~~~~~
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+[wn21072:92834:0:92834]      cma_ep.c:81   process_vm_readv(pid=92828 {0x3428110,524288}-->{0x2b76cc217010,524288}) returned -1: No such process
+[wn21072:92822:0:92822]      cma_ep.c:81   process_vm_readv(pid=92828 {0x2b7437f65010,524288}-->{0x24d9660,524288}) returned -1: No such process
+==== backtrace (tid:  92822) ====
+ 0 0x00000000000037db uct_cma_ep_tx_error()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/sm/scopy/cma/cma_ep.c:81
+ 1 0x0000000000003b06 uct_cma_ep_tx()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/sm/scopy/cma/cma_ep.c:114
+ 2 0x000000000001b7f5 uct_scopy_ep_progress_tx()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/sm/scopy/base/scopy_ep.c:151
+ 3 0x0000000000020232 ucs_arbiter_dispatch_nonempty()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/arbiter.c:321
+ 4 0x000000000001b319 ucs_arbiter_dispatch()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/arbiter.h:386
+ 5 0x00000000000382ea ucs_callbackq_dispatch()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 6 0x00000000000382ea uct_worker_progress()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 7 0x00000000000382ea ucp_worker_progress()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 8 0x000000000002e603 opal_progress()  ???:0
+ 9 0x0000000000050875 ompi_request_default_wait()  ???:0
+10 0x00000000000904c4 MPI_Wait()  ???:0
+11 0x000000000051ba96 ghost_wait_double()  ???:0
+12 0x00000000004b6e94 d_plus_clover_double()  ???:0
+13 0x00000000004defae arnoldi_step_double()  ???:0
+14 0x00000000004dfa07 fgmres_double()  ???:0
+15 0x0000000000527f16 apply_solver_double()  ???:0
+16 0x0000000000529946 hutchinson_split_intermediate_double()  ???:0
+17 0x00000000005286f5 split_mlmc_hutchinson_driver_double()  ???:0
+18 0x00000000004112ae main._omp_fn.0()  main.c:0
+19 0x0000000000014bf6 GOMP_parallel()  /tmp/easybuild/rome/GCCcore/11.3.0/system-system/gcc-11.3.0/stage3_obj/x86_64-pc-linux-gnu/libgomp/../../../libgomp/parallel.c:178
+20 0x0000000000014bf6 GOMP_parallel_end()  /tmp/easybuild/rome/GCCcore/11.3.0/system-system/gcc-11.3.0/stage3_obj/x86_64-pc-linux-gnu/libgomp/../../../libgomp/parallel.c:140
+21 0x0000000000014bf6 GOMP_parallel()  /tmp/easybuild/rome/GCCcore/11.3.0/system-system/gcc-11.3.0/stage3_obj/x86_64-pc-linux-gnu/libgomp/../../../libgomp/parallel.c:179
+22 0x00000000004033a7 main()  ???:0
+23 0x0000000000022555 __libc_start_main()  ???:0
+24 0x0000000000403530 _start()  ???:0
+=================================
+[wn21072:92822] *** Process received signal ***
+[wn21072:92822] Signal: Aborted (6)
+[wn21072:92822] Signal code:  (-6)
+[wn21072:92822] [ 0] /lib64/libpthread.so.0(+0xf630)[0x2b7414e4f630]
+[wn21072:92822] [ 1] /lib64/libc.so.6(gsignal+0x37)[0x2b7415092387]
+[wn21072:92822] [ 2] /lib64/libc.so.6(abort+0x148)[0x2b7415093a78]
+[wn21072:92822] [ 3] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(ucs_fatal_error_message+0x5d)[0x2b7422280b7d]
+[wn21072:92822] [ 4] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2acc3)[0x2b7422284cc3]
+[wn21072:92822] [ 5] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(ucs_log_dispatch+0xd1)[0x2b7422284e31]
+[wn21072:92822] [ 6] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_cma.so.0(+0x37db)[0x2b74224cd7db]
+[wn21072:92822] [ 7] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_cma.so.0(uct_cma_ep_tx+0x186)[0x2b74224cdb06]
+[wn21072:92822] [ 8] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libuct.so.0(uct_scopy_ep_progress_tx+0x55)[0x2b7417fd17f5]
+[wn21072:92822] [ 9] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(ucs_arbiter_dispatch_nonempty+0xa2)[0x2b742227a232]
+[wn21072:92822] [10] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libuct.so.0(uct_scopy_iface_progress+0x59)[0x2b7417fd1319]
+[wn21072:92822] [11] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x2b74221eb2ea]
+[wn21072:92822] [12] /beegfs/Tools/easybuild/stacks/rome/2022a/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libopen-pal.so.40(opal_progress+0x33)[0x2b7415513603]
+[wn21072:92822] [13] /beegfs/Tools/easybuild/stacks/rome/2022a/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(ompi_request_default_wait+0x45)[0x2b74146f1875]
+[wn21072:92822] [14] /beegfs/Tools/easybuild/stacks/rome/2022a/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(PMPI_Wait+0x54)[0x2b74147314c4]
+[wn21072:92822] [15] ./bin/DDalphaAMG[0x51ba96]
+[wn21072:92822] [16] ./bin/DDalphaAMG[0x4b6e94]
+[wn21072:92822] [17] ./bin/DDalphaAMG[0x4defae]
+[wn21072:92822] [18] ./bin/DDalphaAMG[0x4dfa07]
+[wn21072:92822] [19] ./bin/DDalphaAMG[0x527f16]
+[wn21072:92822] [20] ./bin/DDalphaAMG[0x529946]
+[wn21072:92822] [21] ./bin/DDalphaAMG[0x5286f5]
+[wn21072:92822] [22] ./bin/DDalphaAMG[0x4112ae]
+[wn21072:92822] [23] /beegfs/Tools/easybuild/stacks/rome/2022a/software/GCCcore/11.3.0/lib64/libgomp.so.1(GOMP_parallel+0x46)[0x2b74147e1bf6]
+[wn21072:92822] [24] ./bin/DDalphaAMG[0x4033a7]
+[wn21072:92822] [25] /lib64/libc.so.6(__libc_start_main+0xf5)[0x2b741507e555]
+[wn21072:92822] [26] ./bin/DDalphaAMG[0x403530]
+[wn21072:92822] *** End of error message ***
+==== backtrace (tid:  92834) ====
+ 0 0x00000000000037db uct_cma_ep_tx_error()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/sm/scopy/cma/cma_ep.c:81
+ 1 0x0000000000003b06 uct_cma_ep_tx()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/sm/scopy/cma/cma_ep.c:114
+ 2 0x000000000001b7f5 uct_scopy_ep_progress_tx()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/sm/scopy/base/scopy_ep.c:151
+ 3 0x0000000000020232 ucs_arbiter_dispatch_nonempty()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/arbiter.c:321
+ 4 0x000000000001b319 ucs_arbiter_dispatch()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/arbiter.h:386
+ 5 0x00000000000382ea ucs_callbackq_dispatch()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 6 0x00000000000382ea uct_worker_progress()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 7 0x00000000000382ea ucp_worker_progress()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 8 0x000000000002e603 opal_progress()  ???:0
+ 9 0x0000000000050875 ompi_request_default_wait()  ???:0
+10 0x00000000000904c4 MPI_Wait()  ???:0
+11 0x000000000051ba38 ghost_wait_double()  ???:0
+12 0x00000000004b6e94 d_plus_clover_double()  ???:0
+13 0x00000000004defae arnoldi_step_double()  ???:0
+14 0x00000000004dfa07 fgmres_double()  ???:0
+15 0x0000000000527f16 apply_solver_double()  ???:0
+16 0x0000000000529946 hutchinson_split_intermediate_double()  ???:0
+17 0x00000000005286f5 split_mlmc_hutchinson_driver_double()  ???:0
+18 0x00000000004112ae main._omp_fn.0()  main.c:0
+19 0x0000000000014bf6 GOMP_parallel()  /tmp/easybuild/rome/GCCcore/11.3.0/system-system/gcc-11.3.0/stage3_obj/x86_64-pc-linux-gnu/libgomp/../../../libgomp/parallel.c:178
+20 0x0000000000014bf6 GOMP_parallel_end()  /tmp/easybuild/rome/GCCcore/11.3.0/system-system/gcc-11.3.0/stage3_obj/x86_64-pc-linux-gnu/libgomp/../../../libgomp/parallel.c:140
+21 0x0000000000014bf6 GOMP_parallel()  /tmp/easybuild/rome/GCCcore/11.3.0/system-system/gcc-11.3.0/stage3_obj/x86_64-pc-linux-gnu/libgomp/../../../libgomp/parallel.c:179
+22 0x00000000004033a7 main()  ???:0
+23 0x0000000000022555 __libc_start_main()  ???:0
+24 0x0000000000403530 _start()  ???:0
+=================================
+[wn21072:92834] *** Process received signal ***
+[wn21072:92834] Signal: Aborted (6)
+[wn21072:92834] Signal code:  (-6)
+[wn21072:92834] [ 0] /lib64/libpthread.so.0(+0xf630)[0x2b059cb50630]
+[wn21072:92834] [ 1] /lib64/libc.so.6(gsignal+0x37)[0x2b059cd93387]
+[wn21072:92834] [ 2] /lib64/libc.so.6(abort+0x148)[0x2b059cd94a78]
+[wn21072:92834] [ 3] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(ucs_fatal_error_message+0x5d)[0x2b05a9f7ab7d]
+[wn21072:92834] [ 4] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2acc3)[0x2b05a9f7ecc3]
+[wn21072:92834] [ 5] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(ucs_log_dispatch+0xd1)[0x2b05a9f7ee31]
+[wn21072:92834] [ 6] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_cma.so.0(+0x37db)[0x2b05a92767db]
+[wn21072:92834] [ 7] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_cma.so.0(uct_cma_ep_tx+0x186)[0x2b05a9276b06]
+[wn21072:92834] [ 8] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libuct.so.0(uct_scopy_ep_progress_tx+0x55)[0x2b05a9f367f5]
+[wn21072:92834] [ 9] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(ucs_arbiter_dispatch_nonempty+0xa2)[0x2b05a9f74232]
+[wn21072:92834] [10] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libuct.so.0(uct_scopy_iface_progress+0x59)[0x2b05a9f36319]
+[wn21072:92834] [11] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x2b05a9eac2ea]
+[wn21072:92834] [12] /beegfs/Tools/easybuild/stacks/rome/2022a/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libopen-pal.so.40(opal_progress+0x33)[0x2b059d214603]
+[wn21072:92834] [13] /beegfs/Tools/easybuild/stacks/rome/2022a/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(ompi_request_default_wait+0x45)[0x2b059c3f2875]
+[wn21072:92834] [14] /beegfs/Tools/easybuild/stacks/rome/2022a/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(PMPI_Wait+0x54)[0x2b059c4324c4]
+[wn21072:92834] [15] ./bin/DDalphaAMG[0x51ba38]
+[wn21072:92834] [16] ./bin/DDalphaAMG[0x4b6e94]
+[wn21072:92834] [17] ./bin/DDalphaAMG[0x4defae]
+[wn21072:92834] [18] ./bin/DDalphaAMG[0x4dfa07]
+[wn21072:92834] [19] ./bin/DDalphaAMG[0x527f16]
+[wn21072:92834] [20] ./bin/DDalphaAMG[0x529946]
+[wn21072:92834] [21] ./bin/DDalphaAMG[0x5286f5]
+[wn21072:92834] [22] ./bin/DDalphaAMG[0x4112ae]
+[wn21072:92834] [23] /beegfs/Tools/easybuild/stacks/rome/2022a/software/GCCcore/11.3.0/lib64/libgomp.so.1(GOMP_parallel+0x46)[0x2b059c4e2bf6]
+[wn21072:92834] [24] ./bin/DDalphaAMG[0x4033a7]
+[wn21072:92834] [25] /lib64/libc.so.6(__libc_start_main+0xf5)[0x2b059cd7f555]
+[wn21072:92834] [26] ./bin/DDalphaAMG[0x403530]
+[wn21072:92834] *** End of error message ***
+[wn21072:92820:0:92820]      cma_ep.c:81   process_vm_readv(pid=92822 {0x38ef670,524288}-->{0x2b743c945010,524288}) returned -1: No such process
+==== backtrace (tid:  92820) ====
+ 0 0x00000000000037db uct_cma_ep_tx_error()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/sm/scopy/cma/cma_ep.c:81
+ 1 0x0000000000003b06 uct_cma_ep_tx()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/sm/scopy/cma/cma_ep.c:114
+ 2 0x000000000001b7f5 uct_scopy_ep_progress_tx()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/sm/scopy/base/scopy_ep.c:151
+ 3 0x0000000000020232 ucs_arbiter_dispatch_nonempty()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/arbiter.c:321
+ 4 0x000000000001b319 ucs_arbiter_dispatch()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/arbiter.h:386
+ 5 0x00000000000382ea ucs_callbackq_dispatch()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 6 0x00000000000382ea uct_worker_progress()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 7 0x00000000000382ea ucp_worker_progress()  /tmp/easybuild/rome/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 8 0x000000000002e603 opal_progress()  ???:0
+ 9 0x0000000000050875 ompi_request_default_wait()  ???:0
+10 0x00000000000904c4 MPI_Wait()  ???:0
+11 0x000000000051ba96 ghost_wait_double()  ???:0
+12 0x00000000004b6e94 d_plus_clover_double()  ???:0
+13 0x00000000004defae arnoldi_step_double()  ???:0
+14 0x00000000004dfa07 fgmres_double()  ???:0
+15 0x0000000000527f16 apply_solver_double()  ???:0
+16 0x0000000000529946 hutchinson_split_intermediate_double()  ???:0
+17 0x00000000005286f5 split_mlmc_hutchinson_driver_double()  ???:0
+18 0x00000000004112ae main._omp_fn.0()  main.c:0
+19 0x0000000000014bf6 GOMP_parallel()  /tmp/easybuild/rome/GCCcore/11.3.0/system-system/gcc-11.3.0/stage3_obj/x86_64-pc-linux-gnu/libgomp/../../../libgomp/parallel.c:178
+20 0x0000000000014bf6 GOMP_parallel_end()  /tmp/easybuild/rome/GCCcore/11.3.0/system-system/gcc-11.3.0/stage3_obj/x86_64-pc-linux-gnu/libgomp/../../../libgomp/parallel.c:140
+21 0x0000000000014bf6 GOMP_parallel()  /tmp/easybuild/rome/GCCcore/11.3.0/system-system/gcc-11.3.0/stage3_obj/x86_64-pc-linux-gnu/libgomp/../../../libgomp/parallel.c:179
+22 0x00000000004033a7 main()  ???:0
+23 0x0000000000022555 __libc_start_main()  ???:0
+24 0x0000000000403530 _start()  ???:0
+=================================
+[wn21072:92820] *** Process received signal ***
+[wn21072:92820] Signal: Aborted (6)
+[wn21072:92820] Signal code:  (-6)
+[wn21072:92820] [ 0] /lib64/libpthread.so.0(+0xf630)[0x2ac8b72c4630]
+[wn21072:92820] [ 1] /lib64/libc.so.6(gsignal+0x37)[0x2ac8b7507387]
+[wn21072:92820] [ 2] /lib64/libc.so.6(abort+0x148)[0x2ac8b7508a78]
+[wn21072:92820] [ 3] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(ucs_fatal_error_message+0x5d)[0x2ac8bbec7b7d]
+[wn21072:92820] [ 4] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2acc3)[0x2ac8bbecbcc3]
+[wn21072:92820] [ 5] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(ucs_log_dispatch+0xd1)[0x2ac8bbecbe31]
+[wn21072:92820] [ 6] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_cma.so.0(+0x37db)[0x2ac8bb9ea7db]
+[wn21072:92820] [ 7] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_cma.so.0(uct_cma_ep_tx+0x186)[0x2ac8bb9eab06]
+[wn21072:92820] [ 8] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libuct.so.0(uct_scopy_ep_progress_tx+0x55)[0x2ac8bbe837f5]
+[wn21072:92820] [ 9] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(ucs_arbiter_dispatch_nonempty+0xa2)[0x2ac8bbec1232]
+[wn21072:92820] [10] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libuct.so.0(uct_scopy_iface_progress+0x59)[0x2ac8bbe83319]
+[wn21072:92820] [11] /beegfs/Tools/easybuild/stacks/rome/2022a/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x2ac8bbdf92ea]
+[wn21072:92820] [12] /beegfs/Tools/easybuild/stacks/rome/2022a/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libopen-pal.so.40(opal_progress+0x33)[0x2ac8b7988603]
+[wn21072:92820] [13] /beegfs/Tools/easybuild/stacks/rome/2022a/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(ompi_request_default_wait+0x45)[0x2ac8b6b66875]
+[wn21072:92820] [14] /beegfs/Tools/easybuild/stacks/rome/2022a/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(PMPI_Wait+0x54)[0x2ac8b6ba64c4]
+[wn21072:92820] [15] ./bin/DDalphaAMG[0x51ba96]
+[wn21072:92820] [16] ./bin/DDalphaAMG[0x4b6e94]
+[wn21072:92820] [17] ./bin/DDalphaAMG[0x4defae]
+[wn21072:92820] [18] ./bin/DDalphaAMG[0x4dfa07]
+[wn21072:92820] [19] ./bin/DDalphaAMG[0x527f16]
+[wn21072:92820] [20] ./bin/DDalphaAMG[0x529946]
+[wn21072:92820] [21] ./bin/DDalphaAMG[0x5286f5]
+[wn21072:92820] [22] ./bin/DDalphaAMG[0x4112ae]
+[wn21072:92820] [23] /beegfs/Tools/easybuild/stacks/rome/2022a/software/GCCcore/11.3.0/lib64/libgomp.so.1(GOMP_parallel+0x46)[0x2ac8b6c56bf6]
+[wn21072:92820] [24] ./bin/DDalphaAMG[0x4033a7]
+[wn21072:92820] [25] /lib64/libc.so.6(__libc_start_main+0xf5)[0x2ac8b74f3555]
+[wn21072:92820] [26] ./bin/DDalphaAMG[0x403530]
+[wn21072:92820] *** End of error message ***
+--------------------------------------------------------------------------
+mpirun noticed that process rank 94 with PID 86103 on node wn21067 exited on signal 9 (Killed).
+--------------------------------------------------------------------------
