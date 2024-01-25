@@ -205,11 +205,11 @@ if flag,
 end
 
 CFbbopt=GammaFbb(1) + 2*sum(GammaFbb(2:Wopt+1));   % first estimate
-if CFbbopt <= 0
-  beep
-  fprintf('\n WARNING: Gamma pathological: estimated error^2 < 0 \n')
-  return
-end
+%if CFbbopt <= 0
+ % beep
+ % fprintf('\n WARNING: Gamma pathological: estimated error^2 < 0 \n')
+ % return
+%end
 
 GammaFbb=GammaFbb+CFbbopt/N;                       % bias in Gamma corrected
 CFbbopt=GammaFbb(1) + 2*sum(GammaFbb(2:Wopt+1));   % refined estimate
