@@ -28,17 +28,19 @@ op_counter = find(counter == 1);
 
 nr_op=size(op_counter,2);
 sample_size = 1;
+global_counter = 1;
 for op=2:nr_op
     avd = counter(sample_size:op_counter(op)-1);
     sample_size = op_counter(op)-op_counter(op-1);
     fprintf('sample_size \t%d\n',sample_size);
 
-    acc_trace = entries(1:sample_size)';
+    acc_trace = entries(global_counter:sample_size+global_counter)';
     individual_samples = zeros(1,sample_size)';
 
     %---------We go from acc_traces to traces from hutchinson
     for n = 1:sample_size
         individual_samples(n) = n * acc_trace(n) - sum(individual_samples(1:n-1));
+    global_counter= global_counter+1;
     end
 
     %---------Compute Trace and Variance
